@@ -1,0 +1,65 @@
+.evt-ticket-box {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    background: #fff;
+}
+
+.evt-ticket-box__grid {
+    display: grid;
+    gap: 12px;
+}
+
+.evt-ticket-box label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.evt-ticket-box input,
+.evt-ticket-box select {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background: #ffffff;
+}
+
+.evt-ticket-box__submit {
+    appearance: none;
+    border: 1px solid #111827;
+    background: #111827;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.evt-ticket-box__submit:hover {
+    opacity: 0.9;
+}
+
+.evt-ticket-box__notice {
+    display: none;
+    margin-top: 8px;
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+.evt-ticket-box__notice.success {
+    background: #ecfdf3;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+.evt-ticket-box__notice.error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+.evt-ticket-box__event.is-locked {
+    display: none;
+}

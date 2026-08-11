@@ -1,0 +1,259 @@
+.evt-ticket-view-wrapper {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.evt-ticket-view-heading {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.evt-ticket-view-status {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.evt-ticket-view-status-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.evt-ticket-view-status-title {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.evt-ticket-card {
+    border-radius: 10px;
+    border: 1px dashed #d1d5db;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #f9fafb, #ffffff);
+}
+
+.evt-ticket-card-header {
+    border-bottom: 1px dashed #e5e7eb;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.evt-ticket-card-title {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.evt-ticket-card-subtitle,
+.evt-ticket-card-location {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.evt-ticket-card-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.evt-ticket-card-left {
+    flex: 1 1 55%;
+}
+
+.evt-ticket-card-right {
+    flex: 1 1 35%;
+    text-align: center;
+}
+
+.evt-ticket-card-label {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+}
+
+.evt-ticket-card-value {
+    margin: 0.1rem 0 0.6rem;
+    font-size: 1rem;
+}
+
+.evt-ticket-card-attendee {
+    font-weight: 600;
+}
+
+.evt-ticket-card-code {
+    font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    letter-spacing: 0.06em;
+}
+
+.evt-ticket-badge {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.evt-ticket-badge-valid {
+    background-color: #ecfdf5;
+    color: #047857;
+}
+
+.evt-ticket-badge-used {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+.evt-ticket-status-time {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.evt-ticket-card-qr {
+    max-width: 160px;
+    height: auto;
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 0.5rem;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.evt-ticket-card-qr-hint {
+    margin: 0.4rem 0 0;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.evt-ticket-card-footer {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px dashed #e5e7eb;
+    font-size: 0.85rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.evt-ticket-card-footer-label {
+    font-weight: 600;
+    margin-right: 0.25rem;
+}
+
+.evt-ticket-card-calendar-link {
+    display: inline-block;
+    padding: 0.25rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #111827;
+}
+
+.evt-ticket-card-calendar-link:hover {
+    background-color: #f3f4f6;
+}
+
+.evt-ticket-view-lookup {
+    margin-top: 1.5rem;
+}
+
+.evt-ticket-view-lookup-help {
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.evt-ticket-view-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.evt-ticket-view-label {
+    flex: 1 0 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.evt-ticket-view-input {
+    flex: 1 0 60%;
+    padding: 0.5rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+}
+
+.evt-ticket-view-button {
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: #111827;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.evt-ticket-view-button:hover {
+    opacity: 0.9;
+}
+
+.evt-ticket-view-actions {
+    margin-top: -0.75rem;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.evt-ticket-view-action {
+    display: inline-block;
+    padding: 0.55rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    background-color: #111827;
+    color: #ffffff;
+}
+
+.evt-ticket-view-action:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 540px) {
+    .evt-ticket-view-wrapper {
+        padding: 1rem;
+    }
+
+    .evt-ticket-card-body {
+        flex-direction: column;
+    }
+
+    .evt-ticket-view-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .evt-ticket-view-input {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+
+    .evt-ticket-view-button {
+        width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,247 @@
+.evt-events-calendar {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 12px;
+    background: #fff;
+}
+
+.evt-cal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.evt-cal__title {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.evt-cal__nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.evt-cal__btn {
+    appearance: none;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+    color: #111827;
+    font-size: 14px;
+    line-height: 1;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.evt-cal__btn:hover {
+    background: #f3f4f6;
+}
+
+.evt-cal__btn.is-active {
+    background: #111827;
+    border-color: #111827;
+    color: #ffffff;
+}
+
+.evt-cal__toggle {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.evt-cal__dow {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    margin-bottom: 0;
+}
+
+.evt-cal__dow-cell {
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    border: 1px solid #e5e7eb;
+    border-bottom: none;
+    background: #fafafa;
+}
+
+.evt-cal__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    border-top: none;
+}
+
+.evt-cal__cell {
+    min-height: 110px;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 6px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.evt-cal__cell:nth-child(7n) {
+    border-right: none;
+}
+
+.evt-cal__cell.is-outside {
+    background: #fafafa;
+    color: #9ca3af;
+}
+
+.evt-cal__cell.is-today {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+.evt-cal__cell-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+}
+
+.evt-cal__daynum {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.evt-cal__cell-events {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.evt-cal__event {
+    display: block;
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 4px 6px;
+    border-radius: 6px;
+    background: #111827;
+    color: #fff;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.evt-cal__event:hover {
+    opacity: 0.9;
+}
+
+.evt-cal__more {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    color: #2563eb;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.evt-cal__more-list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.evt-cal__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.evt-cal__list-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.evt-cal__list-date {
+    color: #6b7280;
+    margin-left: 6px;
+    font-size: 13px;
+}
+
+.evt-cal__timeline {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.evt-cal__timeline-hours {
+    border-right: 1px solid #e5e7eb;
+    background: #fafafa;
+}
+
+.evt-cal__timeline-hourhead {
+    height: 37px;
+    border-bottom: 1px solid #e5e7eb;
+    box-sizing: border-box;
+}
+
+.evt-cal__timeline-hour {
+    height: 60px;
+    padding: 6px 8px;
+    font-size: 12px;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    box-sizing: border-box;
+}
+
+.evt-cal__timeline-days {
+    display: grid;
+}
+
+.evt-cal__timeline-day {
+    border-right: 1px solid #e5e7eb;
+}
+
+.evt-cal__timeline-day:last-child {
+    border-right: none;
+}
+
+.evt-cal__timeline-dayhead {
+    padding: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #fafafa;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.evt-cal__timeline-lanes {
+    position: relative;
+}
+
+.evt-cal__timeline-lane {
+    position: relative;
+    background: #fff;
+}
+
+.evt-cal__event--block {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    white-space: normal;
+    overflow: hidden;
+    display: block;
+}
+
+.evt-cal__empty {
+    color: #6b7280;
+}
+
+.evt-cal__body.is-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}

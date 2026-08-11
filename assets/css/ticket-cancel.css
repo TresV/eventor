@@ -1,0 +1,105 @@
+.evt-ticket-cancel {
+  font-family: inherit;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.evt-ticket-cancel__heading {
+  margin: 0 0 8px;
+}
+
+.evt-ticket-cancel__help {
+  margin: 0 0 12px;
+  color: #6b7280;
+}
+
+.evt-ticket-cancel__form {
+  display: grid;
+  gap: 12px;
+}
+
+.evt-ticket-cancel__row {
+  margin: 0;
+}
+
+.evt-ticket-cancel__label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+.evt-ticket-cancel__input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.evt-ticket-cancel__input:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, .15);
+}
+
+.evt-ticket-cancel__checkbox {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: #111827;
+}
+
+.evt-ticket-cancel__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #111827;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  transition: opacity .2s ease;
+}
+
+.evt-ticket-cancel__button:hover {
+  opacity: .92;
+}
+
+.evt-ticket-cancel__button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.evt-ticket-cancel__message {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
+}
+
+.evt-ticket-cancel__message.is-success {
+  color: #065f46;
+  background: #ecfdf3;
+  border: 1px solid #bbf7d0;
+}
+
+.evt-ticket-cancel__message.is-error {
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.evt-ticket-cancel__message.is-success,
+.evt-ticket-cancel__message.is-error {
+  display: block;
+}

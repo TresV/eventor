@@ -1,0 +1,246 @@
+/* Wrapper */
+.evt-checkin-wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Generic messages (permissions, etc.) */
+.evt-checkin-message {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.evt-checkin-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Heading & help */
+.evt-checkin-heading {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.evt-checkin-help {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+/* Status area */
+.evt-checkin-status-container {
+    margin-bottom: 1rem;
+}
+
+.evt-checkin-status {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.evt-checkin-status-success {
+    background-color: #ecfdf5;
+    color: #047857;
+}
+
+.evt-checkin-status-warning {
+    background-color: #fef9c3;
+    color: #92400e;
+}
+
+.evt-checkin-status-error {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+.evt-checkin-status-title {
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.evt-checkin-status-body {
+    margin: 0;
+}
+
+/* Ticket details block */
+.evt-checkin-ticket-container {
+    margin-bottom: 1.25rem;
+}
+
+.evt-checkin-ticket-details {
+    padding: 0.9rem 1rem;
+    border-radius: 10px;
+    border: 1px dashed #d1d5db;
+    background: linear-gradient(135deg, #f9fafb, #ffffff);
+}
+
+.evt-checkin-ticket-details h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.evt-checkin-ticket-details ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.evt-checkin-ticket-details li {
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+/* Forms */
+.evt-checkin-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 0.75rem;
+}
+
+.evt-checkin-form-search {
+    margin-top: 0.5rem;
+}
+
+.evt-checkin-label {
+    flex: 1 0 100%;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.evt-checkin-input {
+    flex: 1 0 60%;
+    padding: 0.5rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 1rem;
+}
+
+.evt-checkin-button {
+    padding: 0.5rem 0.95rem;
+    border-radius: 6px;
+    border: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    background-color: #111827;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.evt-checkin-button:hover {
+    opacity: 0.92;
+}
+
+.evt-checkin-button:disabled {
+    opacity: 0.65;
+    cursor: default;
+}
+
+/* QR area */
+.evt-checkin-qr-area {
+    margin-top: 1.25rem;
+    border-radius: 10px;
+    border: 1px dashed #e5e7eb;
+    padding: 0.75rem 1rem 1rem;
+    background-color: #f9fafb;
+}
+
+.evt-checkin-qr-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.evt-checkin-qr-button-start,
+.evt-checkin-qr-button-stop {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 0.9rem;
+    background-color: #ffffff;
+    color: #111827;
+    cursor: pointer;
+}
+
+.evt-checkin-qr-button-start:hover,
+.evt-checkin-qr-button-stop:hover {
+    background-color: #f3f4f6;
+}
+
+.evt-checkin-qr-button-stop:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+.evt-checkin-qr-reader-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.evt-checkin-qr-reader {
+    width: 260px;
+    max-width: 100%;
+    min-height: 180px;
+    border-radius: 10px;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.evt-checkin-qr-hint {
+    margin: 0.25rem 0 0.25rem;
+    font-size: 0.8rem;
+    color: #4b5563;
+    text-align: center;
+}
+
+.evt-checkin-qr-status {
+    font-size: 0.8rem;
+    color: #6b7280;
+    min-height: 1em;
+    text-align: center;
+}
+
+/* When scanner not available */
+.evt-checkin-qr-unavailable {
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Responsive tweaks */
+@media (max-width: 640px) {
+    .evt-checkin-wrapper {
+        padding: 1rem;
+    }
+
+    .evt-checkin-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .evt-checkin-input {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+
+    .evt-checkin-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .evt-checkin-qr-controls {
+        justify-content: flex-start;
+    }
+}

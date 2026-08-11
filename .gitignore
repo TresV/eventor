@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Local tooling (not part of the plugin)
+.claude/
+.qodo/
+
+# Python
+__pycache__/
+*.pyc
+
+# Temp / backup files
+.tmp-*
+*.log
+
+# Editor / OS
+*.swp
+.idea/
+.vscode/

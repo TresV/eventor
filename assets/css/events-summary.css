@@ -1,0 +1,37 @@
+.evt-events-summary {
+    display: grid;
+    gap: 12px;
+}
+
+.evt-events-summary--photo {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.evt-events-summary__item {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.evt-events-summary__image {
+    width: 100%;
+    padding-top: 56%;
+    background-size: cover;
+    background-position: center;
+}
+
+.evt-events-summary__body {
+    padding: 12px;
+}
+
+.evt-events-summary__date {
+    color: #6b7280;
+    margin: 4px 0;
+}
+
+.evt-events-summary__excerpt {
+    margin: 0;
+    color: #374151;
+}

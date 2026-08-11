@@ -1,0 +1,204 @@
+@media (max-width: 767px) {
+  .evt-browser__layout {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Header reflow */
+  .evt-browser__header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* Show mobile-only controls */
+  .evt-browser__nav [data-action="search"],
+  .evt-browser__nav [data-action="filters"],
+  .evt-browser__nav .evt-browser__viewtrigger{
+    display: inline-flex;
+  }
+
+  .evt-browser__nav {
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  /* Prev/Next arrows are handled by the month bottom nav on mobile */
+  .evt-browser__nav [data-nav="prev"],
+  .evt-browser__nav [data-nav="next"] {
+    display: none;
+  }
+
+  /* Hide the inline period + full search row; expose icons instead */
+  .evt-browser__period {
+    display: none;
+  }
+
+  .evt-browser__search {
+    display: none;
+  }
+
+  .evt-browser.is-search-open .evt-browser__search {
+    display: flex;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  .evt-browser.is-search-open .evt-browser__searchinput {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Mobile view dropdown: the visible trigger is the icon; the select sits on top (transparent) */
+  .evt-browser__viewtrigger {
+    position: relative;
+    width: var(--evt-control-height);
+    height: var(--evt-control-height);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .evt-browser__iconbtn--static {
+    pointer-events: none;
+  }
+
+  .evt-browser__view--mobile {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Sidebar becomes off-canvas */
+  .evt-browser__sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(320px, 85vw);
+    max-width: 85vw;
+    background: var(--evt-sidebar-bg);
+    z-index: 10010;
+    transform: translateX(-105%);
+    transition: transform 200ms ease;
+    overflow: auto;
+    padding: 14px 14px 20px;
+    border-right: 1px solid var(--evt-sidebar-border);
+  }
+
+  .evt-browser.is-filters-open .evt-browser__sidebar {
+    transform: translateX(0);
+  }
+
+  .evt-browser__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 10000;
+  }
+
+  .evt-browser.is-filters-open .evt-browser__overlay {
+    display: block !important;
+  }
+
+  /* Month view compact: dots + selected day */
+  .evt-month__cell {
+    min-height: 44px;
+    padding: 6px;
+  }
+
+  .evt-month__event {
+    display: none;
+  }
+
+  .evt-month__dots {
+    margin-top: 4px;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  .evt-month__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #2563eb;
+  }
+
+  .evt-month__cell.is-selected {
+    outline: 2px solid #2563eb;
+    outline-offset: -2px;
+    border-radius: 8px;
+  }
+
+  .evt-month__detail {
+    padding: 12px 0;
+  }
+
+  .evt-month__detail-title {
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+
+  .evt-month__detail-item {
+    padding: 10px 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .evt-month__detail-item .evt-event-status {
+    margin-bottom: 8px;
+  }
+
+  .evt-month__detail-time {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .evt-month__detail-link {
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .evt-month__bottomnav {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+    padding-top: 10px;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .evt-month__bottomnav-center {
+    color: #6b7280;
+    font-size: 13px;
+  }
+
+  .evt-month__bottomnav-btn {
+    background: transparent;
+    border: none;
+    color: #111827;
+    padding: 8px 0;
+    cursor: pointer;
+  }
+
+  .evt-month__bottomnav-btn--left {
+    text-align: left;
+  }
+  .evt-month__bottomnav-btn--right {
+    text-align: right;
+  }
+
+  /* Date range inputs appear in filters drawer */
+  .evt-acc--date {
+    display: block;
+  }
+}

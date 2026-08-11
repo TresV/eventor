@@ -1,0 +1,30 @@
+.evt-events-list__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.evt-events-list__item {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.evt-events-list__item:last-child {
+    border-bottom: none;
+}
+
+.evt-events-list__link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.evt-events-list__date {
+    color: #6b7280;
+    font-size: 0.92em;
+    white-space: nowrap;
+}
+

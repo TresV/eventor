@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<ruleset name="Event Tickets for Elementor">
+    <description>Coding standards configuration for the Event Tickets for Elementor plugin.</description>
+
+    <!--
+        Declare the plugin prefix so PHPCS/WordPress-Coding-Standards recognize
+        the plugin's `evt_`-prefixed functions, hooks, and class names instead of
+        deriving a prefix from the plugin slug.
+    -->
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="evt"/>
+            </property>
+        </properties>
+    </rule>
+</ruleset>

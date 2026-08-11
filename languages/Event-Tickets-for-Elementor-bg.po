@@ -1,0 +1,4031 @@
+# Bulgarian translations for Event Tickets for Elementor package.
+# Copyright (C) 2026 THE Event Tickets for Elementor'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Event Tickets for Elementor package.
+# Automatically generated, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Event Tickets for Elementor 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-03 17:33+0200\n"
+"PO-Revision-Date: 2026-02-03 17:33+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: event-tickets-elementor.php:21
+msgid "Event Tickets for Elementor requires PHP 7.4 or higher."
+msgstr ""
+
+#: includes/class-event-discovery-meta.php:33
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:92
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:161
+msgid "Country"
+msgstr "Държава"
+
+#: includes/class-event-discovery-meta.php:33
+#: includes/class-event-discovery-meta.php:43
+#: includes/class-event-discovery-meta.php:69
+#: includes/class-event-virtual-meta.php:38
+#: includes/class-event-virtual-meta.php:49
+#: includes/class-event-location-meta.php:32
+#: includes/class-event-location-meta.php:49
+#: includes/class-event-location-meta.php:53
+#: includes/class-event-capacity.php:50
+msgid "optional"
+msgstr "по избор"
+
+#: includes/class-event-discovery-meta.php:40
+msgid "e.g. Bulgaria"
+msgstr "напр. България"
+
+#: includes/class-event-discovery-meta.php:43
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:93
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:162
+msgid "City"
+msgstr "Град"
+
+#: includes/class-event-discovery-meta.php:50
+msgid "e.g. Varna"
+msgstr "напр. Варна"
+
+#: includes/class-event-discovery-meta.php:64
+msgid "Enable ticket display price"
+msgstr "Активирай цена на билет (визуално)"
+
+#: includes/class-event-discovery-meta.php:69
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:72
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:144
+#: includes/elementor-widgets/class-widget-events-browser.php:410
+msgid "Cost"
+msgstr "Цена"
+
+#: includes/class-event-discovery-meta.php:78
+msgid "0.00"
+msgstr ""
+
+#: includes/class-event-discovery-meta.php:81
+msgid "Display-only for now. This does not process payments yet."
+msgstr "Само за визуализация засега. Все още не обработва плащания."
+
+#: includes/tickets/class-ticket-timeslot-exclusivity.php:70
+msgid "You already have a ticket for another workshop at this time."
+msgstr ""
+
+#: includes/tickets/class-ticket-cancellation-service.php:40
+#: includes/tickets/class-ticket-cancellation-service.php:92
+#: includes/class-ticket-cancel-ajax.php:45 includes/class-checkin-ajax.php:108
+msgid "Ticket not found."
+msgstr ""
+
+#: includes/tickets/class-ticket-cancellation-service.php:45
+#: includes/tickets/class-ticket-cancellation-service.php:97
+msgid "Checked-in tickets cannot be cancelled."
+msgstr ""
+
+#: includes/tickets/class-ticket-cancellation-service.php:70
+#: includes/tickets/class-ticket-cancellation-service.php:118
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:118
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:375
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:400
+msgid "Unable to cancel ticket."
+msgstr ""
+
+#: includes/class-saved-views-ajax.php:27
+#: includes/class-saved-views-ajax.php:43
+msgid "You must be logged in."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:39 includes/class-cpt-tickets.php:41
+#: includes/class-cpt-tickets.php:51 includes/class-cpt-events.php:108
+#: includes/admin/class-admin-menu.php:58
+#: includes/admin/class-admin-menu.php:59 includes/admin/views/dashboard.php:44
+msgid "Tickets"
+msgstr "Билети"
+
+#: includes/class-cpt-tickets.php:40 includes/class-cpt-tickets.php:42
+#: includes/class-cpt-tickets.php:373
+msgid "Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:43 includes/class-cpt-events.php:42
+msgid "Add New"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:44
+msgid "Add New Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:45
+msgid "Edit Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:46
+msgid "New Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:47
+#: includes/elementor-widgets/class-widget-ticket-view.php:365
+msgid "View Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:48
+msgid "Search Tickets"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:49
+msgid "No tickets found."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:50
+msgid "No tickets found in Trash."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:78
+msgid "Attendee & Ticket"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:87
+msgid "Event Snapshot"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:96
+msgid "Linked Event"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:125
+msgid "Attendee name"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:135
+msgid "Attendee email"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:145
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:109
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:389
+#: includes/elementor-widgets/class-widget-ticket-view.php:164
+#: includes/elementor-widgets/class-widget-ticket-view.php:354
+#: includes/elementor-widgets/class-widget-ticket-view.php:389
+#: includes/elementor-widgets/class-widget-checkin.php:134
+#: includes/elementor-widgets/class-widget-checkin.php:232
+#: includes/elementor-widgets/class-widget-checkin.php:383
+#: includes/class-pdf-ticket-service.php:338
+msgid "Ticket code"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:153
+msgid "Changing the code will invalidate existing QR codes / links."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:158 includes/class-cpt-tickets.php:378
+#: includes/elementor-widgets/class-widget-ticket-view.php:200
+#: includes/elementor-widgets/class-widget-ticket-view.php:393
+msgid "Status"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:161
+msgid "Pending (not checked in)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:164 includes/class-cpt-tickets.php:433
+#: includes/elementor-widgets/class-widget-ticket-view.php:224
+#: includes/elementor-widgets/class-widget-ticket-view.php:330
+#: includes/elementor-widgets/class-widget-checkin.php:146
+#: includes/elementor-widgets/class-widget-checkin.php:243
+#: includes/elementor-widgets/class-widget-checkin.php:423
+msgid "Checked in"
+msgstr "Чекирани"
+
+#: includes/class-cpt-tickets.php:167 includes/class-cpt-tickets.php:436
+#: includes/elementor-dynamic-tags/class-event-status-tag.php:50
+msgid "Cancelled"
+msgstr "Отменени"
+
+#: includes/class-cpt-tickets.php:173 includes/class-cpt-tickets.php:379
+#: includes/elementor-widgets/class-widget-ticket-view.php:236
+#: includes/elementor-widgets/class-widget-ticket-view.php:394
+msgid "Checked-in at"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:180
+msgid "Set automatically when using the check-in screen"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:198
+msgid "Event name (snapshot)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:206
+msgid "Name of the event at the time the ticket was issued."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:211
+msgid "Event start (snapshot)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:218
+msgid "e.g. 2025-12-31 19:00"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:222
+msgid "Event end (snapshot)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:229
+msgid "e.g. 2025-12-31 23:00"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:233
+msgid "Event location (snapshot)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:240 includes/class-cpt-events.php:184
+msgid "e.g. City, venue name"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:265
+msgid "Linked Event (optional)"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:267
+msgid "-- None --"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:285
+msgid "Edit linked event"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:291
+msgid ""
+"Link this ticket to an Event (for reporting, widgets, and future features). "
+"The event details above remain a snapshot at the time of issue."
+msgstr ""
+
+#: includes/class-cpt-tickets.php:374
+msgid "Code"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:375
+#: includes/elementor-widgets/class-widget-ticket-view.php:155
+#: includes/elementor-widgets/class-widget-ticket-view.php:388
+#: includes/class-pdf-ticket-service.php:330
+msgid "Attendee"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:376
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:111
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:391
+#: includes/elementor-widgets/class-widget-ticket-box.php:155
+#: includes/elementor-widgets/class-widget-ticket-box.php:211
+#: includes/class-pdf-ticket-service.php:334
+msgid "Email"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:377
+#: includes/elementor-widgets/class-widget-ticket-view.php:173
+#: includes/elementor-widgets/class-widget-ticket-view.php:390
+#: includes/elementor-widgets/class-widget-ticket-box.php:91
+#: includes/elementor-widgets/class-widget-ticket-box.php:203
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:56
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:56
+#: includes/class-cpt-events.php:39 includes/class-cpt-events.php:41
+msgid "Event"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:439
+#: includes/elementor-widgets/class-widget-checkin.php:145
+#: includes/elementor-widgets/class-widget-checkin.php:242
+#: includes/elementor-widgets/class-widget-checkin.php:425
+msgid "Pending"
+msgstr "Чакащи"
+
+#: includes/class-cpt-tickets.php:472
+msgid "Filter by event"
+msgstr ""
+
+#: includes/class-cpt-tickets.php:474
+#: includes/elementor-widgets/class-widget-events-map.php:58
+msgid "All events"
+msgstr ""
+
+#: includes/class-elementor-dynamic-tags-loader.php:43
+#: includes/admin/class-admin-menu.php:30
+#: includes/admin/class-admin-menu.php:31
+#: includes/class-elementor-widgets-loader.php:42
+msgid "Event Tickets"
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:139
+msgid "Hi,"
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:140
+#: includes/class-email-service.php:140 includes/class-email-service.php:406
+#: includes/class-settings-store.php:179
+msgid "Thank you for registering for {event_name}."
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:141
+#: includes/class-email-service.php:142 includes/class-settings-store.php:241
+msgid ""
+"Show the QR code below at the entrance. Our staff will scan it to check you "
+"in."
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:212
+#: includes/class-settings-store.php:279
+#: includes/email/class-ticket-email-renderer.php:228
+msgid "Ticket code:"
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:215
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:50
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:77
+#: includes/class-settings-store.php:265
+#: includes/email/class-ticket-email-renderer.php:123
+#: includes/email/class-ticket-email-renderer.php:232
+msgid "Download Ticket (PDF)"
+msgstr ""
+
+#: includes/calendar/class-ticket-invite-ics-builder.php:218
+msgid "Check-in URL"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:24
+msgid "Resend Event Ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:43
+#: includes/elementor-widgets/class-widget-events-list.php:46
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:45
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:46
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:55
+#: includes/elementor-widgets/class-widget-ticket-view.php:46
+#: includes/elementor-widgets/class-widget-ticket-box.php:53
+#: includes/elementor-widgets/class-widget-events-browser.php:61
+#: includes/elementor-widgets/class-widget-events-summary.php:42
+#: includes/elementor-widgets/class-widget-events-map.php:46
+#: includes/elementor-widgets/class-widget-events-calendar.php:50
+#: includes/admin/class-settings-page.php:260
+#: includes/admin/class-settings-page.php:268
+msgid "Content"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:51
+#: includes/elementor-widgets/class-widget-ticket-view.php:54
+#: includes/elementor-widgets/class-widget-checkin.php:77
+msgid "Show Heading"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:53
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:84
+#: includes/elementor-widgets/class-widget-ticket-view.php:56
+#: includes/elementor-widgets/class-widget-ticket-view.php:81
+#: includes/elementor-widgets/class-widget-ticket-view.php:106
+#: includes/elementor-widgets/class-widget-ticket-view.php:118
+#: includes/elementor-widgets/class-widget-ticket-view.php:130
+#: includes/elementor-widgets/class-widget-events-calendar.php:75
+#: includes/elementor-widgets/class-widget-checkin.php:79
+#: includes/elementor-widgets/class-widget-checkin.php:104
+msgid "Yes"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:54
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:85
+#: includes/elementor-widgets/class-widget-ticket-view.php:57
+#: includes/elementor-widgets/class-widget-ticket-view.php:82
+#: includes/elementor-widgets/class-widget-ticket-view.php:107
+#: includes/elementor-widgets/class-widget-ticket-view.php:119
+#: includes/elementor-widgets/class-widget-ticket-view.php:131
+#: includes/elementor-widgets/class-widget-events-calendar.php:76
+#: includes/elementor-widgets/class-widget-checkin.php:80
+#: includes/elementor-widgets/class-widget-checkin.php:105
+msgid "No"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:63
+#: includes/elementor-widgets/class-widget-ticket-view.php:66
+#: includes/elementor-widgets/class-widget-checkin.php:89
+msgid "Heading Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:65
+#: includes/elementor-widgets/class-widget-resend-ticket.php:66
+msgid "Find your ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:76
+msgid "Description Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:78
+msgid ""
+"Enter the email address you used when signing up. We will send your latest "
+"ticket to that email."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:85
+msgid "Email Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:87
+msgid "Email address"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:94
+msgid "Email Placeholder"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:96
+#: includes/elementor-widgets/class-widget-resend-ticket.php:235
+msgid "you@example.com"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:103
+#: includes/elementor-widgets/class-widget-resend-ticket.php:173
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:94
+#: includes/elementor-widgets/class-widget-ticket-view.php:289
+#: includes/elementor-widgets/class-widget-ticket-box.php:70
+#: includes/elementor-widgets/class-widget-checkin.php:195
+msgid "Button Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:105
+msgid "Send my ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:112
+msgid "Success Message"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:114
+msgid ""
+"If we find a ticket for this email, we will send it shortly. Please check "
+"your inbox (and spam folder)."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:121
+msgid "Error Message (invalid email)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:123
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:132
+#: includes/elementor-widgets/class-widget-checkin.php:154
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:25
+msgid "Box"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:140
+#: includes/elementor-widgets/class-widget-ticket-view.php:256
+#: includes/elementor-widgets/class-widget-checkin.php:162
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:32
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:83
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:126
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:166
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:257
+msgid "Background"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:151
+#: includes/elementor-widgets/class-widget-ticket-view.php:267
+msgid "Border"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-resend-ticket.php:162
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:288
+#: includes/elementor-widgets/class-widget-ticket-view.php:278
+#: includes/elementor-widgets/class-widget-checkin.php:184
+msgid "Button Background"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:27
+msgid "Events List"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:54
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:63
+#: includes/elementor-widgets/class-widget-ticket-box.php:61
+#: includes/elementor-widgets/class-widget-events-summary.php:50
+#: includes/elementor-widgets/class-widget-events-map.php:145
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:84
+msgid "Heading"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:63
+#: includes/elementor-widgets/class-widget-events-summary.php:72
+#: includes/elementor-widgets/class-widget-events-map.php:106
+msgid "Number of events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:72
+#: includes/elementor-widgets/class-widget-events-summary.php:90
+#: includes/elementor-widgets/class-widget-events-map.php:126
+msgid "Hide Cancelled"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:82
+#: includes/elementor-widgets/class-widget-events-calendar.php:105
+msgid "Only Events With Capacity"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:92
+#: includes/elementor-widgets/class-widget-events-list.php:95
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:47
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:116
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:119
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:95
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:98
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:103
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:106
+#: includes/elementor-widgets/class-widget-ticket-box.php:79
+#: includes/elementor-widgets/class-widget-ticket-box.php:82
+#: includes/elementor-widgets/class-widget-events-summary.php:100
+#: includes/elementor-widgets/class-widget-events-summary.php:103
+#: includes/elementor-widgets/class-widget-events-map.php:136
+#: includes/elementor-widgets/class-widget-events-map.php:139
+#: includes/elementor-widgets/class-widget-events-calendar.php:168
+#: includes/elementor-widgets/class-widget-events-calendar.php:171
+#: includes/elementor-widgets/class-widget-checkin.php:127
+#: includes/elementor-widgets/class-widget-checkin.php:130
+msgid "Labels / Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:101
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:84
+#: includes/elementor-widgets/class-widget-events-summary.php:109
+#: includes/elementor-widgets/class-widget-events-map.php:153
+#: includes/elementor-widgets/class-widget-events-calendar.php:183
+msgid "Empty state"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-list.php:103
+#: includes/elementor-widgets/class-widget-events-list.php:116
+#: includes/elementor-widgets/class-widget-events-summary.php:111
+#: includes/elementor-widgets/class-widget-events-summary.php:124
+msgid "No upcoming events."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:54
+msgid "Today button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:54
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:127
+#: includes/elementor-widgets/class-widget-events-browser.php:343
+#: includes/elementor-widgets/class-widget-events-calendar.php:177
+#: includes/elementor-widgets/class-widget-events-calendar.php:214
+msgid "Today"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:55
+msgid "Search placeholder"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:55
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:128
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:75
+#: includes/elementor-widgets/class-widget-events-browser.php:372
+#: includes/elementor-widgets/class-widget-events-calendar.php:193
+#: includes/elementor-widgets/class-widget-events-calendar.php:229
+msgid "Search events…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:56
+msgid "Search button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:56
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:129
+#: includes/elementor-widgets/class-widget-events-browser.php:345
+#: includes/elementor-widgets/class-widget-events-browser.php:373
+msgid "Search"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:57
+msgid "Filters title"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:57
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:130
+#: includes/elementor-widgets/class-widget-events-browser.php:348
+#: includes/elementor-widgets/class-widget-events-browser.php:388
+msgid "Filters"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:58
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:131
+#: includes/elementor-widgets/class-widget-events-browser.php:392
+msgid "Your selections"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:59
+msgid "Clear button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:59
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:132
+#: includes/elementor-widgets/class-widget-events-browser.php:394
+#: includes/class-event-gallery-meta.php:92
+msgid "Clear"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:62
+msgid "View: Month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:62
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:134
+#: includes/elementor-widgets/class-widget-events-browser.php:73
+#: includes/elementor-widgets/class-widget-events-browser.php:354
+#: includes/elementor-widgets/class-widget-events-browser.php:366
+#: includes/elementor-widgets/class-widget-events-browser.php:375
+#: includes/elementor-widgets/class-widget-events-calendar.php:62
+#: includes/elementor-widgets/class-widget-events-calendar.php:178
+#: includes/elementor-widgets/class-widget-events-calendar.php:215
+msgid "Month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:63
+msgid "View: Week"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:63
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:135
+#: includes/elementor-widgets/class-widget-events-browser.php:74
+#: includes/elementor-widgets/class-widget-events-browser.php:355
+#: includes/elementor-widgets/class-widget-events-browser.php:376
+#: includes/elementor-widgets/class-widget-events-calendar.php:63
+#: includes/elementor-widgets/class-widget-events-calendar.php:179
+#: includes/elementor-widgets/class-widget-events-calendar.php:216
+msgid "Week"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:64
+msgid "View: Day"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:64
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:76
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:136
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:148
+#: includes/elementor-widgets/class-widget-events-browser.php:75
+#: includes/elementor-widgets/class-widget-events-browser.php:356
+#: includes/elementor-widgets/class-widget-events-browser.php:377
+#: includes/elementor-widgets/class-widget-events-browser.php:442
+#: includes/elementor-widgets/class-widget-events-calendar.php:64
+#: includes/elementor-widgets/class-widget-events-calendar.php:180
+#: includes/elementor-widgets/class-widget-events-calendar.php:217
+msgid "Day"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:65
+msgid "View: List"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:65
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:137
+#: includes/elementor-widgets/class-widget-events-browser.php:76
+#: includes/elementor-widgets/class-widget-events-browser.php:357
+#: includes/elementor-widgets/class-widget-events-browser.php:378
+#: includes/elementor-widgets/class-widget-events-calendar.php:65
+#: includes/elementor-widgets/class-widget-events-calendar.php:181
+#: includes/elementor-widgets/class-widget-events-calendar.php:218
+msgid "List"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:66
+msgid "View: Grid"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:66
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:138
+#: includes/elementor-widgets/class-widget-events-browser.php:77
+#: includes/elementor-widgets/class-widget-events-browser.php:358
+#: includes/elementor-widgets/class-widget-events-browser.php:379
+msgid "Grid"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:67
+msgid "View: Map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:67
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:139
+#: includes/elementor-widgets/class-widget-events-browser.php:78
+#: includes/elementor-widgets/class-widget-events-browser.php:359
+#: includes/elementor-widgets/class-widget-events-browser.php:380
+msgid "Map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:68
+msgid "View: Summary"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:68
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:140
+#: includes/elementor-widgets/class-widget-events-browser.php:79
+#: includes/elementor-widgets/class-widget-events-browser.php:360
+#: includes/elementor-widgets/class-widget-events-browser.php:381
+msgid "Summary"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:71
+msgid "Filter: Event Category"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:71
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:143
+#: includes/elementor-widgets/class-widget-events-browser.php:402
+#: includes/class-event-taxonomies.php:40
+msgid "Event Category"
+msgstr "Категория събитие"
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:72
+msgid "Filter: Cost"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:73
+msgid "Filter: Tags"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:73
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:145
+#: includes/elementor-widgets/class-widget-events-browser.php:418
+msgid "Tags"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:74
+msgid "Filter: Venues"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:74
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:146
+#: includes/elementor-widgets/class-widget-events-browser.php:426
+#: includes/class-event-taxonomies.php:79
+msgid "Venues"
+msgstr "Локации"
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:75
+msgid "Filter: Organizers"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:75
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:147
+#: includes/elementor-widgets/class-widget-events-browser.php:434
+#: includes/class-event-taxonomies.php:99
+msgid "Organizers"
+msgstr "Организатори"
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:76
+msgid "Filter: Day"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:77
+msgid "Filter: Country / City"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:77
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:149
+#: includes/elementor-widgets/class-widget-events-browser.php:450
+msgid "Country / City"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:78
+msgid "Filter: Event Status"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:78
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:150
+#: includes/elementor-widgets/class-widget-events-browser.php:458
+#: includes/elementor-dynamic-tags/class-event-status-tag.php:26
+msgid "Event Status"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:79
+msgid "Filter: Virtual Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:79
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:151
+#: includes/elementor-widgets/class-widget-events-browser.php:466
+msgid "Virtual Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:80
+msgid "Filter: Date Range"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:80
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:152
+#: includes/elementor-widgets/class-widget-events-browser.php:474
+msgid "Date Range"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:83
+#: includes/elementor-widgets/class-widget-events-calendar.php:182
+msgid "Loading text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:83
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:154
+#: includes/elementor-widgets/class-widget-events-browser.php:483
+msgid "Loading…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:84
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:155
+#: includes/elementor-widgets/class-widget-events-calendar.php:183
+#: includes/elementor-widgets/class-widget-events-calendar.php:220
+msgid "No events."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:85
+msgid "“more” suffix"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:85
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:156
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:122
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:178
+#: includes/elementor-widgets/class-widget-events-calendar.php:184
+#: includes/elementor-widgets/class-widget-events-calendar.php:221
+msgid "more"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:86
+msgid "Month view: This Month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:86
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:157
+msgid "This Month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:87
+msgid "CTA: Get Tickets"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:87
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:158
+#: includes/elementor-widgets/class-widget-ticket-box.php:72
+msgid "Get Tickets"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:88
+msgid "Label: Free"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:88
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:159
+msgid "Free"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:91
+msgid "Filter: Any"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:91
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:160
+msgid "Any"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:92
+msgid "Filter: Country"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:93
+msgid "Filter: City"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:94
+msgid "Filter: Hide cancelled"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:94
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:163
+msgid "Hide cancelled"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:95
+msgid "Filter: Hide postponed"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:95
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:164
+msgid "Hide postponed"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:96
+msgid "Filter: Virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:96
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:165
+msgid "Virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:97
+msgid "Filter: Cost prefix"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:97
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:166
+msgid "Cost ($):"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:98
+msgid "Filter: From"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:98
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:167
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:94
+#: includes/elementor-widgets/class-widget-events-browser.php:367
+#: includes/elementor-widgets/class-widget-events-map.php:84
+#: includes/elementor-widgets/class-widget-events-calendar.php:191
+#: includes/elementor-widgets/class-widget-events-calendar.php:227
+msgid "From"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:99
+msgid "Filter: To"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:99
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:168
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:106
+#: includes/elementor-widgets/class-widget-events-browser.php:368
+#: includes/elementor-widgets/class-widget-events-map.php:95
+#: includes/elementor-widgets/class-widget-events-calendar.php:192
+#: includes/elementor-widgets/class-widget-events-calendar.php:228
+msgid "To"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:100
+msgid "Pill button: Remove"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:100
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:169
+#: includes/class-event-timeslots-meta.php:149
+msgid "Remove"
+msgstr "Премахни"
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:102
+msgid "Virtual: Show all"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:102
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:170
+msgid "Show all"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:103
+msgid "Virtual: Show only virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:103
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:171
+msgid "Show only virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:104
+msgid "Virtual: Hide virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:104
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:172
+msgid "Hide virtual"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:107
+msgid "Day: Sun"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:107
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:174
+msgid "Sun"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:108
+msgid "Day: Mon"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:108
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:175
+msgid "Mon"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:109
+msgid "Day: Tue"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:109
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:176
+msgid "Tue"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:110
+msgid "Day: Wed"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:110
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:177
+msgid "Wed"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:111
+msgid "Day: Thu"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:111
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:178
+msgid "Thu"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:112
+msgid "Day: Fri"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:112
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:179
+msgid "Fri"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:113
+msgid "Day: Sat"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:113
+#: includes/elementor-widgets/class-widget-events-browser-labeled.php:180
+msgid "Sat"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:22
+msgid "Events Filter Bar"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:53
+msgid "Show keyword input"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:63
+msgid "Show date range"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:73
+msgid "Keyword placeholder"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:82
+msgid "Enable Saved Views"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:92
+msgid "From label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:104
+msgid "To label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:126
+msgid "Label: Saved"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:128
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:174
+#: includes/elementor-widgets/class-widget-events-calendar.php:187
+#: includes/elementor-widgets/class-widget-events-calendar.php:223
+msgid "Saved"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:137
+msgid "Placeholder: Saved select"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:139
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:175
+#: includes/elementor-widgets/class-widget-events-calendar.php:188
+#: includes/elementor-widgets/class-widget-events-calendar.php:224
+msgid "Select…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:148
+msgid "Button: Save"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:150
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:176
+#: includes/elementor-widgets/class-widget-events-calendar.php:189
+#: includes/elementor-widgets/class-widget-events-calendar.php:225
+msgid "Save"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:159
+msgid "Button: Reset"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:161
+#: includes/elementor-widgets/class-widget-events-filter-bar.php:177
+#: includes/elementor-widgets/class-widget-events-calendar.php:190
+#: includes/elementor-widgets/class-widget-events-calendar.php:226
+msgid "Reset"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:23
+msgid "Events Month Calendar"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:54
+#: includes/elementor-widgets/class-widget-events-calendar.php:95
+msgid "Hide Cancelled Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:64
+msgid "Hide Past Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:74
+msgid "Max events per day"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:85
+msgid "Show “+X more”"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:104
+#: includes/elementor-widgets/class-widget-events-calendar.php:175
+msgid "Label: Prev"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:106
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:176
+#: includes/elementor-widgets/class-widget-events-calendar.php:175
+#: includes/elementor-widgets/class-widget-events-calendar.php:212
+msgid "Prev"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:112
+#: includes/elementor-widgets/class-widget-events-calendar.php:176
+msgid "Label: Next"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:114
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:177
+#: includes/elementor-widgets/class-widget-events-browser.php:342
+#: includes/elementor-widgets/class-widget-events-calendar.php:176
+#: includes/elementor-widgets/class-widget-events-calendar.php:213
+msgid "Next"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:120
+#: includes/elementor-widgets/class-widget-events-calendar.php:184
+msgid "Label: “more” suffix"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:130
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:125
+msgid "Style"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:138
+msgid "Event Background"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-month-calendar.php:149
+msgid "Event Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:27
+msgid "Cancel Ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:65
+msgid "Cancel your ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:73
+#: includes/elementor-widgets/class-widget-checkin.php:114
+msgid "Help Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:75
+msgid "Enter your ticket code and the email used during registration."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:82
+msgid "Allow “Refund requested”"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:96
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:465
+#: includes/admin/class-email-template-tokens.php:142
+#: includes/email/class-email-links.php:46
+msgid "Cancel ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:109
+#: includes/elementor-widgets/class-widget-checkin.php:134
+msgid "Label: Ticket code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:110
+#: includes/elementor-widgets/class-widget-checkin.php:135
+msgid "Placeholder: Ticket code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:110
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:390
+msgid "Enter ticket code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:111
+#: includes/elementor-widgets/class-widget-ticket-box.php:153
+#: includes/elementor-widgets/class-widget-checkin.php:142
+msgid "Label: Email"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:112
+msgid "Placeholder: Email"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:112
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:392
+msgid "Enter email"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:113
+msgid "Label: Reason"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:113
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:393
+msgid "Reason (optional)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:114
+msgid "Placeholder: Reason"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:114
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:394
+msgid "Optional reason"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:115
+msgid "Label: Refund checkbox"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:115
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:395
+msgid "Request a refund"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:116
+msgid "Message: Submitting"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:116
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:373
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:398
+#: includes/elementor-widgets/class-widget-ticket-box.php:173
+#: includes/elementor-widgets/class-widget-ticket-box.php:214
+#: includes/class-plugin.php:289
+msgid "Submitting…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:117
+msgid "Message: Success"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:117
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:374
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:399
+msgid "Ticket cancelled."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:118
+msgid "Message: Error (fallback)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:133
+msgid "Container Padding"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:145
+msgid "Container Background"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:153
+msgid "Container Border"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:154
+msgid "Container Border Radius"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:155
+msgid "Form Row Gap"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:160
+msgid "Heading Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:172
+msgid "Heading Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:180
+msgid "Help Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:192
+msgid "Help Text Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:200
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:134
+msgid "Label Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:212
+msgid "Label Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:220
+msgid "Input Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:231
+msgid "Input Background"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:242
+msgid "Input Border Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:253
+msgid "Input Border Radius"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:269
+msgid "Input Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:277
+msgid "Button Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:299
+msgid "Button Border Radius"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:315
+msgid "Button Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:323
+msgid "Success Message Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:334
+msgid "Error Message Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-cancel.php:346
+msgid "Message Typography"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:27
+msgid "Event Ticket View"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:68
+#: includes/elementor-widgets/class-widget-ticket-view.php:69
+msgid "Your Ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:79
+msgid "Allow Manual Ticket Code Input"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:91
+msgid "Manual Input Help Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:93
+msgid ""
+"If your ticket didn’t open automatically from the link, paste your ticket "
+"code below."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:94
+msgid "Instructions for visitors…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:104
+msgid "Show Status"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:116
+msgid "Show QR Code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:128
+msgid "Show \"Add to calendar\" Links"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:145
+msgid "Labels"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:153
+msgid "Attendee Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:162
+msgid "Ticket Code Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:171
+msgid "Event Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:180
+msgid "Date & Time Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:182
+#: includes/elementor-widgets/class-widget-ticket-view.php:391
+msgid "Date & time"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:189
+msgid "Location Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:191
+#: includes/elementor-widgets/class-widget-ticket-view.php:392
+#: includes/class-cpt-events.php:173 includes/class-cpt-events.php:176
+#: includes/class-event-required-fields.php:97
+msgid "Location"
+msgstr "Локация"
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:198
+msgid "Status Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:210
+msgid "Status – Pending"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:212
+#: includes/elementor-widgets/class-widget-ticket-view.php:333
+msgid "Not checked in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:222
+msgid "Status – Checked in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:234
+msgid "\"Checked-in at\" Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:248
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:48
+msgid "Card"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:362
+msgid "Paste your ticket code…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:377
+#: includes/elementor-widgets/class-widget-checkin.php:341
+#: includes/class-checkin-ajax.php:65
+msgid "No ticket was found for this code."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:467
+#: includes/class-settings-store.php:247
+#: includes/email/class-ticket-email-renderer.php:120
+#: includes/email/class-ticket-email-renderer.php:229
+msgid "Add to calendar:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:470
+#: includes/class-settings-store.php:253
+#: includes/email/class-ticket-email-renderer.php:121
+#: includes/email/class-ticket-email-renderer.php:230
+msgid "Google Calendar"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:475
+msgid ".ics file"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:485
+msgid "Check-in QR code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view.php:486
+msgid "Show this code at the entrance."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:30
+msgid "Event Ticket Box"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:63
+msgid "Get your tickets"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:89
+#: includes/elementor-widgets/class-widget-checkin.php:143
+#: includes/class-settings-store.php:189
+msgid "Label: Event"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:97
+msgid "Placeholder: Event"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:99
+#: includes/elementor-widgets/class-widget-ticket-box.php:204
+msgid "Select an event"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:105
+msgid "Label: Quantity"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:107
+#: includes/elementor-widgets/class-widget-ticket-box.php:205
+msgid "Quantity"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:113
+msgid "Label: Timeslot"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:115
+#: includes/elementor-widgets/class-widget-ticket-box.php:206
+msgid "Timeslot"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:121
+msgid "Placeholder: Timeslot"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:123
+#: includes/elementor-widgets/class-widget-ticket-box.php:207
+msgid "Select a timeslot"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:129
+#: includes/elementor-widgets/class-widget-checkin.php:141
+msgid "Label: Name"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:131
+#: includes/elementor-widgets/class-widget-ticket-box.php:208
+msgid "Your name"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:137
+msgid "Label: Telephone (optional)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:139
+#: includes/elementor-widgets/class-widget-ticket-box.php:209
+msgid "Telephone"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:145
+msgid "Placeholder: Telephone"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:147
+#: includes/elementor-widgets/class-widget-ticket-box.php:210
+msgid "Optional"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:162
+#: includes/elementor-widgets/class-widget-ticket-box.php:165
+msgid "Messages"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:171
+msgid "Text: Submitting"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:179
+msgid "Text: Success"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:181
+#: includes/elementor-widgets/class-widget-ticket-box.php:215
+msgid "Tickets sent to your email."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:187
+msgid "Text: Error (fallback)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-box.php:189
+#: includes/elementor-widgets/class-widget-ticket-box.php:216
+#: includes/class-plugin.php:291
+msgid "Something went wrong. Please try again."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:24
+msgid "Event Ticket View (Virtual)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:37
+msgid "Virtual / Hybrid"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:45
+msgid "Show virtual links/embed"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:55
+msgid "Embed livestream (YouTube/Vimeo)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:68
+msgid "Embed height (px)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:83
+msgid "Meeting Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:85
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:142
+msgid "Join meeting"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:95
+msgid "Livestream Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:97
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:143
+msgid "Watch livestream"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-virtual.php:148
+msgid "Online access"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:21
+msgid "Event Ticket View (PDF)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:30
+msgid "PDF"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:38
+msgid "Show PDF download button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-ticket-view-pdf.php:48
+msgid "Button Label"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:33
+msgid "Events Browser"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:69
+#: includes/elementor-widgets/class-widget-events-calendar.php:58
+msgid "Initial View"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:87
+msgid "Hide Cancelled Events (default)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:97
+msgid "Hide Postponed Events (default)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:107
+msgid "Only Events With Capacity (default)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:117
+msgid "Items in List/Grid/Summary"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:128
+msgid "Default Range (days) for List/Grid/Summary/Map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:139
+msgid "Default Date Range"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:143
+msgid "Today → End of Year"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:144
+msgid "Custom"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:152
+msgid "Default From (YYYY-MM-DD)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:164
+msgid "Default To (YYYY-MM-DD)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:176
+msgid "Grid Columns"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:187
+msgid "Show Filter: Event Category"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:197
+msgid "Show Filter: Cost"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:207
+msgid "Show Filter: Tags"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:217
+msgid "Show Filter: Venues"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:227
+msgid "Show Filter: Organizers"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:237
+msgid "Show Filter: Day of Week"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:247
+msgid "Show Filter: Country/City"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:257
+msgid "Show Filter: Event Status"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:267
+msgid "Show Filter: Virtual Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:341
+msgid "Previous"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:351
+msgid "Views"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-browser.php:353
+msgid "View"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-summary.php:27
+msgid "Events Summary / Photo"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-summary.php:59
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:25
+msgid "Layout"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-summary.php:63
+msgid "Summary List"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-summary.php:64
+msgid "Photo Grid"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-summary.php:81
+msgid "Columns (photo view)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:23
+msgid "Events Map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:54
+msgid "Time Frame"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:59
+msgid "Upcoming (next X days)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:60
+msgid "This week"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:61
+msgid "This month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:62
+msgid "Custom range"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:70
+msgid "Upcoming Days"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:115
+msgid "Geocode locations (no coordinates)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:119
+msgid ""
+"If an event has only a location text or a Google Maps link without "
+"coordinates, try geocoding to place a pin (uses OpenStreetMap Nominatim)."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:155
+#: includes/elementor-widgets/class-widget-events-map.php:190
+msgid "No events with map coordinates or links."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:161
+msgid "Links section heading"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:163
+#: includes/elementor-widgets/class-widget-events-map.php:193
+msgid "Events with map links:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:169
+msgid "Label: View event"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:171
+#: includes/elementor-widgets/class-widget-events-map.php:201
+msgid "View event"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:177
+msgid "Label: Open map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-map.php:179
+#: includes/elementor-widgets/class-widget-events-map.php:196
+#: includes/class-event-location-meta.php:84
+msgid "Open map"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:27
+msgid "Events Calendar"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:73
+msgid "Allow View Toggle"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:85
+msgid "Show Navigation (prev/next/today)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:115
+msgid "Items in List View"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:124
+msgid "List View Range (days)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:129
+msgid "How many days ahead to show in the List view."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:136
+msgid "Show Filter Bar"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:146
+msgid "Timeline Start Hour (week/day)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:157
+msgid "Timeline End Hour (week/day)"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:177
+msgid "Label: Today"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:178
+msgid "Label: Month"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:179
+msgid "Label: Week"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:180
+msgid "Label: Day"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:181
+msgid "Label: List"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:182
+#: includes/elementor-widgets/class-widget-events-calendar.php:219
+msgid "Loading events…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:185
+msgid "Title: Upcoming list"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:185
+#: includes/elementor-widgets/class-widget-events-calendar.php:222
+msgid "Upcoming Events"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:187
+msgid "Filter bar: Saved"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:188
+msgid "Filter bar: Select placeholder"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:189
+msgid "Filter bar: Save button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:190
+msgid "Filter bar: Reset button"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:191
+msgid "Filter bar: From"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:192
+msgid "Filter bar: To"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-events-calendar.php:193
+msgid "Filter bar: Keyword placeholder"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:40
+msgid "Event Ticket Check-In"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:69
+msgid "Check-In Settings"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:91
+#: includes/elementor-widgets/class-widget-checkin.php:92
+msgid "Event Check-In"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:102
+msgid "Show Help Text"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:116
+msgid ""
+"Scan the QR code or type the ticket code exactly as shown on the ticket."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:117
+msgid "Instructions for staff…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:135
+#: includes/elementor-widgets/class-widget-checkin.php:233
+#: includes/elementor-widgets/class-widget-checkin.php:390
+msgid "Scan QR or type code…"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:136
+msgid "Button: Check ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:136
+#: includes/elementor-widgets/class-widget-checkin.php:234
+#: includes/elementor-widgets/class-widget-checkin.php:393
+msgid "Check Ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:137
+msgid "Button: Confirm check-in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:137
+#: includes/elementor-widgets/class-widget-checkin.php:235
+#: includes/elementor-widgets/class-widget-checkin.php:444
+msgid "Confirm Check-In"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:139
+msgid "Heading: Ticket details"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:139
+#: includes/elementor-widgets/class-widget-checkin.php:236
+#: includes/elementor-widgets/class-widget-checkin.php:414
+msgid "Ticket details"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:140
+msgid "Label: Code"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:140
+#: includes/elementor-widgets/class-widget-checkin.php:237
+#: includes/elementor-widgets/class-widget-checkin.php:416
+msgid "Code:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:141
+#: includes/elementor-widgets/class-widget-checkin.php:238
+#: includes/elementor-widgets/class-widget-checkin.php:417
+msgid "Name:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:142
+#: includes/elementor-widgets/class-widget-checkin.php:239
+#: includes/elementor-widgets/class-widget-checkin.php:418
+msgid "Email:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:143
+#: includes/elementor-widgets/class-widget-checkin.php:240
+#: includes/elementor-widgets/class-widget-checkin.php:419
+#: includes/class-settings-store.php:191
+#: includes/email/class-ticket-email-renderer.php:108
+msgid "Event:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:144
+msgid "Label: Status"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:144
+#: includes/elementor-widgets/class-widget-checkin.php:241
+#: includes/elementor-widgets/class-widget-checkin.php:420
+msgid "Status:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:145
+msgid "Status: Pending"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:146
+msgid "Status: Checked in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:147
+msgid "Label: Checked-in at"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:147
+#: includes/elementor-widgets/class-widget-checkin.php:244
+#: includes/elementor-widgets/class-widget-checkin.php:430
+msgid "Checked-in at:"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:173
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:105
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:188
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:281
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:453
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:171
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:279
+msgid "Border Color"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:210
+msgid "You must be logged in to use the check-in screen."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:218
+#: includes/admin/class-repair-tools-page.php:83
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:269
+#: includes/class-plugin.php:227 includes/class-checkin-ajax.php:120
+msgid "Ticket checked in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:270
+#: includes/class-checkin-ajax.php:121
+msgid "The ticket has been successfully marked as checked in."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:273
+#: includes/elementor-widgets/class-widget-checkin.php:306
+#: includes/elementor-widgets/class-widget-checkin.php:340
+#: includes/class-plugin.php:223
+msgid "Ticket not found"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:274
+msgid "Unable to check in this ticket. It may have been deleted."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:293
+#: includes/elementor-widgets/class-widget-checkin.php:328
+#: includes/class-plugin.php:225 includes/class-checkin-ajax.php:74
+msgid "Ticket already checked in"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:296
+#: includes/elementor-widgets/class-widget-checkin.php:330
+#: includes/class-checkin-ajax.php:77
+#, php-format
+msgid "This ticket was checked in at %s."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:301
+#: includes/elementor-widgets/class-widget-checkin.php:335
+#: includes/class-plugin.php:226 includes/class-checkin-ajax.php:85
+msgid "Valid ticket"
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:302
+#: includes/elementor-widgets/class-widget-checkin.php:336
+#: includes/class-checkin-ajax.php:86
+msgid "This ticket is valid and not yet checked in."
+msgstr ""
+
+#: includes/elementor-widgets/class-widget-checkin.php:307
+#: includes/class-plugin.php:224
+msgid "No ticket was found for this code. Please check the code and try again."
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:24
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:185
+msgid "Sidebar"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:43
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:94
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:137
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:177
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:157
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:183
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:212
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:92
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:230
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:253
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:321
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:118
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:147
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:214
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:268
+msgid "Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:54
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:102
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:557
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:105
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:225
+msgid "Divider Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:75
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:249
+msgid "Selection Pills"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:118
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:86
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:94
+msgid "Header"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls.php:158
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:134
+msgid "Buttons"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:27
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:25
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:27
+msgid "Container"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:51
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:246
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:72
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:49
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:49
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:286
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:59
+msgid "Border Radius"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:64
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:259
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:62
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:62
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:299
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:72
+msgid "Padding"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:113
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:394
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:518
+msgid "Title Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:151
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:225
+msgid "Normal"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:177
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:248
+msgid "Hover"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:194
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:223
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:264
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:159
+#: includes/admin/class-email-preset-branding-settings.php:71
+msgid "Background Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:206
+msgid "Active"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:273
+msgid "Month Grid"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:294
+msgid "Day-of-week Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:305
+msgid "Day-of-week Text"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:324
+msgid "Cell Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:335
+msgid "Outside Month Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:346
+msgid "Today Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:357
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:335
+msgid "Day Number Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:378
+#: includes/class-cpt-events.php:38 includes/class-cpt-events.php:40
+#: includes/class-cpt-events.php:50 includes/admin/class-admin-menu.php:50
+#: includes/admin/class-admin-menu.php:51 includes/admin/views/dashboard.php:28
+msgid "Events"
+msgstr "Събития"
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:386
+msgid "Pill Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:397
+msgid "Pill Text"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:408
+msgid "Hover Opacity"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:422
+msgid "Pill Radius"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:445
+msgid "Timeline (Week/Day)"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:468
+msgid "Hours Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:479
+msgid "Hours Text"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:498
+msgid "Day Header Text"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:517
+msgid "Event Block Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:528
+msgid "Event Block Text"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:549
+msgid "List View"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:568
+msgid "Link Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-calendar-style-controls.php:587
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:155
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:499
+msgid "Date Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:33
+msgid "Gap"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:95
+msgid "Image (Photo View)"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:103
+msgid "Image Aspect Ratio (%)"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:118
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:118
+msgid "Title"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:126
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:184
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:126
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:155
+msgid "Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:147
+msgid "Meta"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-summary-style-controls.php:176
+msgid "Excerpt"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:84
+msgid "Items"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:92
+msgid "Item Spacing"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-list-style-controls.php:147
+msgid "Date"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:111
+msgid "Spacing"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:126
+msgid "Fields"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:153
+msgid "Field Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:164
+msgid "Field Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:183
+msgid "Field Border Radius"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:196
+msgid "Field Padding"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:210
+msgid "Button"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-ticket-box-style-controls.php:313
+msgid "Notice"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-widget-text-controls.php:21
+msgid "Text / Labels"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:131
+msgid "Buttons & Inputs"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:193
+msgid "Width"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:300
+msgid "Month View"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:316
+msgid "Day-of-week Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:354
+msgid "Event Pill Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:365
+msgid "Event Pill Text Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:378
+msgid "List / Day / Week / Summary"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:413
+msgid "Meta Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:432
+msgid "Excerpt Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:451
+msgid "CTA Color"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:464
+msgid "Grid View"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:480
+msgid "Card Background"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:531
+msgid "Map View"
+msgstr ""
+
+#: includes/elementor-widgets/concerns/trait-events-browser-style-controls-extended.php:539
+msgid "Map Height"
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:60
+#, php-format
+msgid "%d left"
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:92
+msgid "Please provide an email address."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:96
+msgid "Please select an event."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:104
+msgid "Please select a timeslot."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:109
+msgid "Selected timeslot is invalid."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:145
+msgid "This event is being booked right now. Please try again in a moment."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:154
+msgid "This event is sold out."
+msgstr ""
+
+#: includes/class-ticket-box-ajax.php:209
+#, php-format
+msgid "%d ticket created and emailed."
+msgid_plural "%d tickets created and emailed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-ticket-box-ajax.php:214
+#, php-format
+msgid ""
+"Only %1$d of %2$d requested tickets were available. We created and emailed "
+"%1$d."
+msgstr ""
+
+#: includes/class-event-gallery-meta.php:52
+#: includes/class-event-gallery-meta.php:81
+#: includes/elementor-dynamic-tags/class-event-gallery-tag.php:29
+msgid "Event Gallery"
+msgstr "Галерия на събитието"
+
+#: includes/class-event-gallery-meta.php:53
+msgid "Use selected images"
+msgstr "Използвай избраните изображения"
+
+#: includes/class-event-gallery-meta.php:54
+#: includes/class-event-gallery-meta.php:98
+msgid "No gallery images selected."
+msgstr "Няма избрани изображения в галерията."
+
+#: includes/class-event-gallery-meta.php:82
+msgid ""
+"Add multiple images for this event. They can be used in Elementor via the "
+"“Event Gallery” dynamic tag."
+msgstr ""
+"Добавете няколко изображения за това събитие. Те могат да се използват в "
+"Elementor чрез динамичния таг „Event Gallery“."
+
+#: includes/class-event-gallery-meta.php:89
+msgid "Add / Edit Gallery"
+msgstr "Добави / Редактирай галерия"
+
+#: includes/class-event-virtual-meta.php:33
+msgid "Enable virtual / hybrid details"
+msgstr "Активирай виртуални / хибридни детайли"
+
+#: includes/class-event-virtual-meta.php:38
+msgid "Meeting URL"
+msgstr "Линк за среща"
+
+#: includes/class-event-virtual-meta.php:45
+#: includes/class-event-virtual-meta.php:56
+msgid "https://…"
+msgstr ""
+
+#: includes/class-event-virtual-meta.php:46
+msgid "Zoom/Teams/Meet link."
+msgstr "Линк за Zoom/Teams/Meet."
+
+#: includes/class-event-virtual-meta.php:49
+msgid "Livestream URL"
+msgstr "Линк за излъчване"
+
+#: includes/class-event-virtual-meta.php:57
+msgid "YouTube/Vimeo/live page URL."
+msgstr "YouTube/Vimeo/страница за излъчване."
+
+#: includes/class-pdf-ticket-service.php:342
+msgid ""
+"This ticket is valid only when scanned through the official check-in system."
+msgstr ""
+
+#: includes/class-pdf-ticket-service.php:348
+msgid "Show this QR at the entrance."
+msgstr ""
+
+#: includes/class-pdf-ticket-service.php:359
+msgid "Generated by Event Tickets for Elementor."
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-capacity-tag.php:25
+msgid "Event Capacity"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-capacity-tag.php:48
+#: includes/class-event-capacity.php:59
+#: includes/class-event-timeslots-meta.php:145
+msgid "Unlimited"
+msgstr "Неограничено"
+
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:23
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:23
+msgid "Event Source"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:27
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:27
+msgid "Current Event (template context)"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:28
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:28
+msgid "Specific Event (select below)"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:69
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:69
+msgid "Event ID (fallback)"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-tag-base.php:71
+#: includes/elementor-dynamic-tags/class-event-data-tag-base.php:71
+msgid "Use when the dropdown cannot list your event (large sites)."
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-date-tag.php:29
+msgid "Event Start"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-date-tag.php:30
+msgid "Event End"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-date-tag.php:50
+msgid "Format"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-venue-tag.php:25
+msgid "Event Venue"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-featured-image-tag.php:25
+msgid "Event Featured Image"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-status-tag.php:54
+msgid "Postponed"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-status-tag.php:57
+msgid "Scheduled"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-description-tag.php:25
+msgid "Event Description"
+msgstr ""
+
+#: includes/elementor-dynamic-tags/class-event-title-tag.php:25
+msgid "Event Title"
+msgstr ""
+
+#: includes/class-cpt-events.php:43 includes/admin/views/dashboard.php:34
+msgid "Add New Event"
+msgstr ""
+
+#: includes/class-cpt-events.php:44
+msgid "Edit Event"
+msgstr ""
+
+#: includes/class-cpt-events.php:45
+msgid "New Event"
+msgstr ""
+
+#: includes/class-cpt-events.php:46
+msgid "View Event"
+msgstr ""
+
+#: includes/class-cpt-events.php:47
+msgid "Search Events"
+msgstr ""
+
+#: includes/class-cpt-events.php:48
+msgid "No events found."
+msgstr ""
+
+#: includes/class-cpt-events.php:49
+msgid "No events found in Trash."
+msgstr ""
+
+#: includes/class-cpt-events.php:93
+msgid "Event Details"
+msgstr "Детайли за събитието"
+
+#: includes/class-cpt-events.php:134
+msgid "Legend:"
+msgstr "Легенда:"
+
+#: includes/class-cpt-events.php:135
+msgid "required"
+msgstr "задължително"
+
+#: includes/class-cpt-events.php:136
+msgid "(optional) fields are clearly marked"
+msgstr "(по избор) полетата са ясно обозначени"
+
+#: includes/class-cpt-events.php:140
+msgid "Schedule"
+msgstr "График"
+
+#: includes/class-cpt-events.php:144
+msgid "Start (date & time)"
+msgstr "Начало (дата и час)"
+
+#: includes/class-cpt-events.php:157
+msgid "End (date & time)"
+msgstr "Край (дата и час)"
+
+#: includes/class-cpt-events.php:191
+msgid "Delivery"
+msgstr "Достъп"
+
+#: includes/class-cpt-events.php:196
+msgid "Ticketing"
+msgstr "Билетиране"
+
+#: includes/class-cpt-events.php:375
+msgid "Total tickets:"
+msgstr "Общо билети:"
+
+#: includes/class-cpt-events.php:377 includes/admin/views/dashboard.php:54
+#, php-format
+msgid "Pending: %d"
+msgstr ""
+
+#: includes/class-cpt-events.php:378 includes/admin/views/dashboard.php:51
+#, php-format
+msgid "Checked in: %d"
+msgstr ""
+
+#: includes/class-cpt-events.php:379 includes/admin/views/dashboard.php:57
+#, php-format
+msgid "Cancelled: %d"
+msgstr ""
+
+#: includes/class-cpt-events.php:381
+msgid "View tickets for this event"
+msgstr "Виж билетите за това събитие"
+
+#: includes/class-event-taxonomies.php:39
+msgid "Event Categories"
+msgstr "Категории събития"
+
+#: includes/class-event-taxonomies.php:59
+msgid "Event Tags"
+msgstr "Етикети събития"
+
+#: includes/class-event-taxonomies.php:60
+msgid "Event Tag"
+msgstr "Етикет събитие"
+
+#: includes/class-event-taxonomies.php:80
+msgid "Venue"
+msgstr "Локация"
+
+#: includes/class-event-taxonomies.php:100
+msgid "Organizer"
+msgstr "Организатор"
+
+#: includes/admin/class-ticket-rules-settings.php:35
+msgid "Ticket Rules"
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:37
+msgid "Control ticket validation rules applied during ticket creation."
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:44
+msgid "Prevent timeslot conflicts"
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:52
+msgid "Buffer minutes"
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:85
+#: includes/admin/class-settings-page.php:156
+#: includes/admin/class-email-template-tokens.php:156
+#: includes/admin/class-email-preset-branding-settings.php:106
+msgid "Enabled"
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:86
+msgid ""
+"Blocks creating a ticket when the attendee email already has an active "
+"ticket for another event that overlaps in time."
+msgstr ""
+
+#: includes/admin/class-ticket-rules-settings.php:100
+msgid ""
+"Optional. Adds a buffer to both sides of the event time range when detecting "
+"overlaps."
+msgstr ""
+
+#: includes/admin/class-pdf-template-previews.php:23
+msgid "PDF Templates Preview"
+msgstr ""
+
+#: includes/admin/class-pdf-template-previews.php:37
+#: includes/class-event-pdf-preset-meta.php:101
+#: includes/email/class-email-template-presets.php:26
+msgid "Classic"
+msgstr "Класически"
+
+#: includes/admin/class-pdf-template-previews.php:38
+#: includes/class-event-pdf-preset-meta.php:96
+#: includes/email/class-email-template-presets.php:27
+msgid "Minimal"
+msgstr "Минимален"
+
+#: includes/admin/class-pdf-template-previews.php:39
+#: includes/class-event-pdf-preset-meta.php:98
+#: includes/email/class-email-template-presets.php:28
+msgid "Dark"
+msgstr "Тъмен"
+
+#: includes/admin/class-pdf-template-previews.php:43
+msgid ""
+"These are the built-in PDF layouts. You can choose the template per event in "
+"the Event editor."
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:41
+#: includes/admin/class-admin-menu.php:42
+msgid "Dashboard"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:66
+#: includes/admin/class-admin-menu.php:67
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/class-admin-menu.php:75
+#: includes/admin/class-admin-menu.php:76
+msgid "Tools"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:35
+msgid "Event Tickets Tools"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:42
+msgid "Repair Tools"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:49
+msgid "Rebuild event timestamps"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:51
+msgid "Recomputes timestamp meta used for event date queries."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:56
+msgid "Clear capacity cache"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:58
+msgid "Clears per-event capacity transients."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:63
+msgid "Clear QR cache"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:65
+msgid "Deletes cached ticket QR PNG files from uploads."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:70
+msgid "Verify ticket → event links"
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:72
+msgid "Finds tickets referencing missing events."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:96
+#, php-format
+msgid "Rebuilt timestamps for %d events."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:103
+#, php-format
+msgid "Cleared capacity cache for %d events."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:110
+#, php-format
+msgid "Deleted %d QR files."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:117
+#, php-format
+msgid "Found %d tickets linked to missing events."
+msgstr ""
+
+#: includes/admin/class-repair-tools-page.php:122
+msgid "No task selected."
+msgstr ""
+
+#: includes/admin/class-settings-page.php:92
+msgid "Event Tickets Settings"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:223
+#: includes/class-settings-store.php:129
+msgid "Email Settings"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:224
+msgid "Elementor Settings"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:225
+msgid "PDF Settings"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:250
+msgid "Attachments"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:253
+msgid "Template"
+msgstr ""
+
+#: includes/admin/class-settings-page.php:256
+msgid "Advanced"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:35
+msgid "Template Tokens"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:38
+msgid ""
+"Use these tokens in email fields and templates. They will be replaced per "
+"ticket."
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:40
+msgid "Available tokens:"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:46
+msgid "Preset branding tokens:"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:50
+msgid ""
+"QR codes are not included in emails. Use the PDF attachment for the "
+"scannable ticket."
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:53
+msgid ""
+"For custom templates, you can also use {tickets_html} (multi-ticket emails)."
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:61
+msgid "Cancellation Link"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:64
+msgid "Configure the cancel link used in ticket emails."
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:73
+msgid "Cancel Page URL"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:81
+msgid "Cancel Link Label"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:89
+msgid "Prefill email in cancel link"
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:127
+msgid ""
+"URL of the page where you placed the “Cancel Ticket” widget. Used to build "
+"{cancel_url}."
+msgstr ""
+
+#: includes/admin/class-email-template-tokens.php:157
+msgid ""
+"Adds the attendee email to the cancel URL for convenience. Note: email will "
+"be visible in the link."
+msgstr ""
+
+#: includes/admin/class-ticket-resend-actions.php:32
+#: includes/admin/class-ticket-resend-actions.php:100
+msgid "Resend ticket email"
+msgstr ""
+
+#: includes/admin/class-ticket-resend-actions.php:114
+#: includes/class-checkin-ajax.php:37
+msgid "You are not allowed to perform this action."
+msgstr ""
+
+#: includes/admin/class-ticket-resend-actions.php:158
+#, php-format
+msgid "%d ticket email resent."
+msgid_plural "%d ticket emails resent."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-ticket-resend-actions.php:164
+#, php-format
+msgid "%d ticket email failed to send."
+msgid_plural "%d ticket emails failed to send."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/admin/class-event-csv-export.php:27
+msgid "Export Tickets (CSV)"
+msgstr "Експорт на билети (CSV)"
+
+#: includes/admin/class-event-csv-export.php:48
+msgid "Download a CSV of all tickets linked to this event."
+msgstr ""
+
+#: includes/admin/class-event-csv-export.php:49
+msgid "Download CSV"
+msgstr "Изтегли CSV"
+
+#: includes/admin/class-event-csv-export.php:58
+msgid "Invalid export request."
+msgstr ""
+
+#: includes/admin/class-event-csv-export.php:62
+msgid "You do not have permission to export tickets for this event."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:19
+msgid "Event Tickets Dashboard"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:22
+msgid ""
+"Overview of your events and tickets, plus quick access to common actions."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:31
+msgid "Published events"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:37
+msgid "View All Events"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:47
+msgid "Total tickets (published)"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:63
+msgid "View Tickets"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:70
+msgid "Quick Links"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:75
+msgid "Create a new event"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:80
+msgid "Manage events"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:85
+msgid "Review tickets"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:90
+msgid "Configure settings"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:100
+msgid "Recent Events"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:114
+msgid "No events yet. Create your first event to get started."
+msgstr ""
+
+#: includes/admin/views/dashboard.php:121
+msgid "Recent Tickets"
+msgstr ""
+
+#: includes/admin/views/dashboard.php:139
+msgid ""
+"No tickets yet. Connect an Elementor form or use the event widgets to start "
+"issuing tickets."
+msgstr ""
+
+#: includes/admin/class-email-template-presets-settings.php:36
+msgid "Email Presets"
+msgstr ""
+
+#: includes/admin/class-email-template-presets-settings.php:39
+msgid ""
+"Choose one of the built-in email templates. Custom templates (if enabled) "
+"override this choice."
+msgstr ""
+
+#: includes/admin/class-email-template-presets-settings.php:48
+msgid "Preset"
+msgstr ""
+
+#: includes/admin/class-email-template-presets-settings.php:110
+msgid "Preview"
+msgstr ""
+
+#: includes/admin/class-email-template-presets-settings.php:120
+msgid ""
+"Preview uses sample values. Actual emails will use your email content "
+"settings and ticket data."
+msgstr ""
+
+#: includes/admin/class-event-duplicate-actions.php:51
+msgid "Duplicate"
+msgstr ""
+
+#: includes/admin/class-event-duplicate-actions.php:58
+msgid "You do not have permission to duplicate events."
+msgstr ""
+
+#: includes/admin/class-event-duplicate-actions.php:79
+msgid "(Copy)"
+msgstr ""
+
+#: includes/admin/class-event-duplicate-actions.php:79
+msgid "Event (Copy)"
+msgstr ""
+
+#: includes/admin/class-event-duplicate-actions.php:88
+msgid "Unable to duplicate event."
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:35
+msgid "Preset Branding"
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:38
+msgid "Branding options for the built-in email presets (logo + colors)."
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:47
+#: includes/class-settings-store.php:439
+msgid "Show Logo"
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:55
+msgid "Primary Color"
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:63
+#: includes/class-settings-store.php:446
+msgid "Accent Color"
+msgstr ""
+
+#: includes/admin/class-email-preset-branding-settings.php:107
+msgid ""
+"Uses your site logo (Appearance → Customize → Site Identity) or the Site "
+"Icon as fallback."
+msgstr ""
+
+#: includes/class-event-status.php:31
+msgid "Mark event as cancelled"
+msgstr "Маркирай събитието като отменено"
+
+#: includes/class-event-status.php:37
+msgid "Mark event as postponed"
+msgstr "Маркирай събитието като отложено"
+
+#: includes/class-event-status.php:40
+msgid "Cancelled events can be hidden from widgets."
+msgstr "Отменените събития могат да бъдат скрити от уиджетите."
+
+#: includes/class-event-location-meta.php:32
+msgid "Google Maps share link"
+msgstr "Google Maps линк за споделяне"
+
+#: includes/class-event-location-meta.php:39
+msgid "Paste a Google Maps link…"
+msgstr "Поставете Google Maps линк…"
+
+#: includes/class-event-location-meta.php:42
+msgid "Paste a full Google Maps URL to auto-fill latitude/longitude."
+msgstr "Поставете пълен Google Maps URL за автоматично попълване на географска ширина/дължина."
+
+#: includes/class-event-location-meta.php:43
+msgid "Short links (maps.app.goo.gl) may need to be opened and expanded first."
+msgstr "Кратките линкове (maps.app.goo.gl) може първо да трябва да се отворят и разширят."
+
+#: includes/class-event-location-meta.php:49
+msgid "Latitude"
+msgstr "Географска ширина"
+
+#: includes/class-event-location-meta.php:53
+msgid "Longitude"
+msgstr "Географска дължина"
+
+#: includes/class-event-location-meta.php:83
+msgid ""
+"Short link detected. Click “Open map”, then copy the full Google Maps URL "
+"from the address bar and paste it here."
+msgstr ""
+
+#: includes/class-event-location-meta.php:85
+msgid "Coordinates detected and applied:"
+msgstr ""
+
+#: includes/class-ticket-service.php:199
+msgid "Ticket must have an attendee email."
+msgstr ""
+
+#: includes/class-ticket-service.php:209
+msgid "This event is at capacity. No more tickets can be issued."
+msgstr ""
+
+#: includes/class-ticket-service.php:222
+msgid "Ticket must be linked to an event or include an event name."
+msgstr ""
+
+#: includes/class-ticket-service.php:226
+msgid "Ticket must be linked to an event or include an event start date/time."
+msgstr ""
+
+#: includes/class-ticket-service.php:233
+#, php-format
+msgid "Ticket for %s"
+msgstr ""
+
+#: includes/class-ticket-service.php:234
+msgid "Event Ticket"
+msgstr ""
+
+#: includes/class-plugin.php:221
+msgid "Error"
+msgstr ""
+
+#: includes/class-plugin.php:222
+msgid "Unable to process the request. Please try again."
+msgstr ""
+
+#: includes/class-plugin.php:228
+msgid "Please enter a ticket code."
+msgstr ""
+
+#: includes/class-plugin.php:229 includes/class-checkin-ajax.php:103
+msgid "Missing ticket ID."
+msgstr ""
+
+#: includes/class-plugin.php:230
+msgid "QR scanner is unavailable on this device or browser."
+msgstr ""
+
+#: includes/class-plugin.php:231
+msgid "Starting camera…"
+msgstr ""
+
+#: includes/class-plugin.php:232
+msgid "Stopping camera…"
+msgstr ""
+
+#: includes/class-plugin.php:233
+msgid "Point the camera at the ticket QR code."
+msgstr ""
+
+#: includes/class-plugin.php:288
+msgid "Submit"
+msgstr ""
+
+#: includes/class-plugin.php:290
+msgid "Tickets created and emailed."
+msgstr ""
+
+#: includes/class-plugin.php:468
+msgid "Name this view"
+msgstr ""
+
+#: includes/integrations/class-elementor-forms-integration.php:131
+msgid "This event requires a valid timeslot selection."
+msgstr ""
+
+#: includes/class-event-required-fields.php:91
+msgid "Start date & time"
+msgstr ""
+
+#: includes/class-event-required-fields.php:94
+msgid "End date & time"
+msgstr ""
+
+#: includes/class-event-required-fields.php:103
+msgid "event details"
+msgstr ""
+
+#: includes/class-event-required-fields.php:107
+#, php-format
+msgid "Event was saved as draft. Please fill in required fields: %s."
+msgstr "Събитието е запазено като чернова. Моля, попълнете задължителните полета: %s."
+
+#: includes/class-event-ticket-code-pattern-meta.php:36
+msgid "Ticket Code Pattern"
+msgstr "Шаблон за код на билет"
+
+#: includes/class-event-ticket-code-pattern-meta.php:46
+msgid ""
+"Pattern supports: {RANDOM} or {RANDOM:n}, {ID}, {EVENT_SLUG}, {DATEYMD}."
+msgstr ""
+"Шаблонът поддържа: {RANDOM} или {RANDOM:n}, {ID}, {EVENT_SLUG}, "
+"{DATEYMD}."
+
+#: includes/class-email-service.php:65 includes/class-email-service.php:339
+#: includes/class-settings-store.php:158
+msgid "Your ticket for {event_name}"
+msgstr ""
+
+#: includes/class-email-service.php:71 includes/class-email-service.php:124
+#: includes/class-email-service.php:345 includes/class-email-service.php:373
+msgid "our event"
+msgstr ""
+
+#: includes/class-email-service.php:139 includes/class-email-service.php:405
+#: includes/class-settings-store.php:172
+msgid "Hi {attendee_name},"
+msgstr ""
+
+#: includes/class-email-service.php:141 includes/class-settings-store.php:235
+#: includes/email/class-ticket-email-renderer.php:118
+msgid "Your ticket code is:"
+msgstr ""
+
+#: includes/class-email-service.php:146 includes/class-settings-store.php:165
+msgid ""
+"If you need to make changes or cancel, please contact us by reply to this "
+"email."
+msgstr ""
+
+#: includes/class-event-pdf-preset-meta.php:39
+msgid "PDF Ticket Template"
+msgstr "PDF шаблон за билет"
+
+#: includes/class-event-pdf-preset-meta.php:49
+msgid "Choose the PDF ticket layout preset for this event."
+msgstr "Изберете PDF шаблон за билета за това събитие."
+
+#: includes/class-event-capacity.php:50
+msgid "Max tickets"
+msgstr "Макс. билети"
+
+#: includes/class-event-capacity.php:62
+msgid ""
+"Leave blank for unlimited. Cancelled tickets do not count toward capacity."
+msgstr ""
+
+#: includes/class-event-capacity.php:65
+msgid "Remaining:"
+msgstr "Оставащи:"
+
+#: includes/class-ticket-statuses.php:26
+msgctxt "ticket status"
+msgid "Cancelled"
+msgstr "Отменени"
+
+#: includes/class-ticket-statuses.php:32
+#, php-format
+msgid "Cancelled <span class=\"count\">(%s)</span>"
+msgid_plural "Cancelled <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/class-settings-store.php:134
+msgid ""
+"Control how ticket emails are sent to attendees.<br><br><strong>Available "
+"tokens:</strong> <code>{event_name}</code>, <code>{event_start}</code>, "
+"<code>{event_end}</code>, <code>{event_location}</code>, "
+"<code>{event_map_url}</code>, <code>{ticket_code}</code>, "
+"<code>{attendee_name}</code>, <code>{attendee_email}</code>, "
+"<code>{verify_url}</code>, <code>{ics_url}</code>, <code>{google_cal_url}</"
+"code>, <code>{pdf_url}</code>."
+msgstr ""
+
+#: includes/class-settings-store.php:141
+msgid "From Name"
+msgstr ""
+
+#: includes/class-settings-store.php:142
+msgid "Name shown as the sender of ticket emails."
+msgstr ""
+
+#: includes/class-settings-store.php:148
+msgid "From Email"
+msgstr ""
+
+#: includes/class-settings-store.php:149
+msgid "Email address used as the sender and reply-to for ticket emails."
+msgstr ""
+
+#: includes/class-settings-store.php:155
+msgid "Ticket Email Subject"
+msgstr ""
+
+#: includes/class-settings-store.php:156
+msgid ""
+"Subject line for ticket emails. Supported tokens: {event_name}, "
+"{ticket_code}, {attendee_name}."
+msgstr ""
+
+#: includes/class-settings-store.php:162
+msgid "Ticket Email Footer"
+msgstr ""
+
+#: includes/class-settings-store.php:163
+msgid ""
+"Shown at the bottom of the ticket email. You can include bilingual "
+"instructions here."
+msgstr ""
+
+#: includes/class-settings-store.php:169
+msgid "Greeting"
+msgstr ""
+
+#: includes/class-settings-store.php:170
+msgid "Example: Hi {attendee_name},"
+msgstr ""
+
+#: includes/class-settings-store.php:176
+msgid "Intro Text"
+msgstr ""
+
+#: includes/class-settings-store.php:177
+msgid "Shown below the greeting."
+msgstr ""
+
+#: includes/class-settings-store.php:183
+msgid "Event Details Heading"
+msgstr ""
+
+#: includes/class-settings-store.php:185
+#: includes/email/class-ticket-email-renderer.php:107
+msgid "Event details"
+msgstr ""
+
+#: includes/class-settings-store.php:195
+msgid "Label: Date & Time"
+msgstr ""
+
+#: includes/class-settings-store.php:197
+#: includes/email/class-ticket-email-renderer.php:109
+#: includes/email/class-ticket-email-renderer.php:225
+msgid "Date & time:"
+msgstr ""
+
+#: includes/class-settings-store.php:201
+msgid "Label: End"
+msgstr ""
+
+#: includes/class-settings-store.php:203
+#: includes/email/class-ticket-email-renderer.php:110
+#: includes/email/class-ticket-email-renderer.php:226
+msgid "End:"
+msgstr ""
+
+#: includes/class-settings-store.php:207
+msgid "Label: Location"
+msgstr ""
+
+#: includes/class-settings-store.php:209
+#: includes/email/class-ticket-email-renderer.php:111
+#: includes/email/class-ticket-email-renderer.php:227
+msgid "Location:"
+msgstr "Локация:"
+
+#: includes/class-settings-store.php:213
+msgid "Show Location/Navigation Block"
+msgstr ""
+
+#: includes/class-settings-store.php:214
+msgid ""
+"Adds a section with the event location and a maps link (when available)."
+msgstr ""
+
+#: includes/class-settings-store.php:220
+msgid "Location Block Heading"
+msgstr ""
+
+#: includes/class-settings-store.php:222
+#: includes/email/class-ticket-email-renderer.php:114
+#: includes/email/class-ticket-email-renderer.php:236
+msgid "Getting there"
+msgstr ""
+
+#: includes/class-settings-store.php:226
+msgid "Location Block Text"
+msgstr ""
+
+#: includes/class-settings-store.php:227
+msgid "Use tokens like {event_location} and {event_map_url}."
+msgstr ""
+
+#: includes/class-settings-store.php:229
+msgid ""
+"Venue: {event_location}\n"
+"Open in Maps: {event_map_url}"
+msgstr ""
+
+#: includes/class-settings-store.php:233
+msgid "Ticket Code Intro"
+msgstr ""
+
+#: includes/class-settings-store.php:239
+msgid "QR Instructions"
+msgstr ""
+
+#: includes/class-settings-store.php:245
+msgid "Calendar Block Heading"
+msgstr ""
+
+#: includes/class-settings-store.php:251
+msgid "Google Calendar Button Label"
+msgstr ""
+
+#: includes/class-settings-store.php:257
+msgid ".ics Button Label"
+msgstr ""
+
+#: includes/class-settings-store.php:259
+#: includes/email/class-ticket-email-renderer.php:122
+#: includes/email/class-ticket-email-renderer.php:231
+msgid "Download .ics"
+msgstr ""
+
+#: includes/class-settings-store.php:263
+msgid "PDF Button Label"
+msgstr ""
+
+#: includes/class-settings-store.php:269
+msgid "Multi-ticket Intro"
+msgstr ""
+
+#: includes/class-settings-store.php:270
+msgid "Shown above the ticket list when multiple tickets are emailed together."
+msgstr ""
+
+#: includes/class-settings-store.php:272
+#: includes/email/class-ticket-email-renderer.php:224
+msgid "Here are your tickets:"
+msgstr ""
+
+#: includes/class-settings-store.php:276
+msgid "Label: Ticket Code"
+msgstr ""
+
+#: includes/class-settings-store.php:277
+msgid "Label used inside multi-ticket emails for each ticket code row."
+msgstr ""
+
+#: includes/class-settings-store.php:285
+msgid "Email Attachments"
+msgstr ""
+
+#: includes/class-settings-store.php:288
+msgid "Control whether QR/ICS are embedded in the email body and/or attached."
+msgstr ""
+
+#: includes/class-settings-store.php:292
+msgid "QR Delivery"
+msgstr ""
+
+#: includes/class-settings-store.php:293
+msgid "Choose how the QR code is included for single-ticket emails."
+msgstr ""
+
+#: includes/class-settings-store.php:297
+msgid "Inline (in email body)"
+msgstr ""
+
+#: includes/class-settings-store.php:298
+msgid "Attachment only"
+msgstr ""
+
+#: includes/class-settings-store.php:299
+msgid "Inline + attachment"
+msgstr ""
+
+#: includes/class-settings-store.php:300
+msgid "Do not include QR"
+msgstr ""
+
+#: includes/class-settings-store.php:305
+msgid "QR Size (px)"
+msgstr ""
+
+#: includes/class-settings-store.php:306
+msgid "Used when generating the email QR image."
+msgstr ""
+
+#: includes/class-settings-store.php:312
+msgid "Attach .ics File"
+msgstr ""
+
+#: includes/class-settings-store.php:313
+msgid "Attach an .ics file in addition to showing calendar buttons/links."
+msgstr ""
+
+#: includes/class-settings-store.php:321
+msgid "Email Template"
+msgstr ""
+
+#: includes/class-settings-store.php:324
+msgid "Customize the default email or provide your own HTML/CSS template."
+msgstr ""
+
+#: includes/class-settings-store.php:328
+msgid "Custom Email CSS"
+msgstr ""
+
+#: includes/class-settings-store.php:329
+msgid ""
+"Optional. Added inside a <style> block in the email HTML. Use !important to "
+"override defaults if needed."
+msgstr ""
+
+#: includes/class-settings-store.php:336
+msgid "Use Custom Email Template"
+msgstr ""
+
+#: includes/class-settings-store.php:337
+msgid "Enable to use your own HTML template (advanced)."
+msgstr ""
+
+#: includes/class-settings-store.php:343
+msgid "Custom Template CSS"
+msgstr ""
+
+#: includes/class-settings-store.php:344
+msgid "Optional. Applied as a <style> block when using a custom template."
+msgstr ""
+
+#: includes/class-settings-store.php:351
+msgid "Custom Template HTML"
+msgstr ""
+
+#: includes/class-settings-store.php:352
+msgid ""
+"Paste HTML. You can use the same tokens as above. Use {tickets_html} in "
+"multi-ticket emails."
+msgstr ""
+
+#: includes/class-settings-store.php:359
+msgid "Template Preview"
+msgstr ""
+
+#: includes/class-settings-store.php:367
+msgid "Email Advanced"
+msgstr ""
+
+#: includes/class-settings-store.php:370
+msgid "Advanced behaviors for specific email clients."
+msgstr ""
+
+#: includes/class-settings-store.php:374
+msgid "Microsoft Invite Mode"
+msgstr ""
+
+#: includes/class-settings-store.php:375
+msgid ""
+"When enabled, Outlook/Hotmail/Live recipients receive a calendar-invite "
+"style email body for better “Add to calendar” prompts."
+msgstr ""
+
+#: includes/class-settings-store.php:383
+msgid "Elementor Form Mapping"
+msgstr ""
+
+#: includes/class-settings-store.php:384
+msgid ""
+"Map Elementor Pro form fields to ticket data. Useful if your form uses "
+"custom field IDs."
+msgstr ""
+
+#: includes/class-settings-store.php:389
+msgid "Form Name"
+msgstr ""
+
+#: includes/class-settings-store.php:390
+msgid ""
+"Elementor Pro \"Form Name\" that should create tickets (case-sensitive)."
+msgstr ""
+
+#: includes/class-settings-store.php:396
+msgid "Name Field ID"
+msgstr ""
+
+#: includes/class-settings-store.php:397
+msgid "Field ID used for attendee name (e.g. \"name\")."
+msgstr ""
+
+#: includes/class-settings-store.php:403
+msgid "Email Field ID"
+msgstr ""
+
+#: includes/class-settings-store.php:404
+msgid "Field ID used for attendee email (e.g. \"email\")."
+msgstr ""
+
+#: includes/class-settings-store.php:410
+msgid "Event Field ID"
+msgstr ""
+
+#: includes/class-settings-store.php:411
+msgid "Field ID used for event name (e.g. \"event\")."
+msgstr ""
+
+#: includes/class-settings-store.php:417
+msgid "Event Date/Time Field ID"
+msgstr ""
+
+#: includes/class-settings-store.php:418
+msgid "Field ID used for event date & time (e.g. \"event_date_time\")."
+msgstr ""
+
+#: includes/class-settings-store.php:424
+msgid "Event Location Field ID"
+msgstr ""
+
+#: includes/class-settings-store.php:425
+msgid "Field ID used for event location (e.g. \"event_location\")."
+msgstr ""
+
+#: includes/class-settings-store.php:433
+msgid "PDF Tickets"
+msgstr ""
+
+#: includes/class-settings-store.php:434
+msgid "Control the PDF ticket layout and email attachments."
+msgstr ""
+
+#: includes/class-settings-store.php:440
+msgid "Include the site logo (or site icon) in the PDF header when available."
+msgstr ""
+
+#: includes/class-settings-store.php:447
+msgid "Hex color used for the PDF accent bar."
+msgstr ""
+
+#: includes/class-settings-store.php:454
+msgid "Footer Text"
+msgstr ""
+
+#: includes/class-settings-store.php:455
+msgid "Optional footer text shown at the bottom of the PDF."
+msgstr ""
+
+#: includes/class-settings-store.php:461
+msgid "Attach PDF to Emails"
+msgstr ""
+
+#: includes/class-settings-store.php:462
+msgid ""
+"Attach a PDF ticket to outgoing ticket emails. Disable if email size is a "
+"concern."
+msgstr ""
+
+#: includes/class-ticket-cancel-ajax.php:40
+msgid "Please enter your ticket code."
+msgstr ""
+
+#: includes/class-ticket-cancel-ajax.php:54
+msgid "Please enter the email used for the ticket."
+msgstr ""
+
+#: includes/class-ticket-cancel-ajax.php:59
+msgid "Ticket code and email do not match."
+msgstr ""
+
+#: includes/class-event-timeslots-meta.php:58
+msgid "Additional timeslots (optional)"
+msgstr "Допълнителни часови слотове (по избор)"
+
+#: includes/class-event-timeslots-meta.php:59
+msgid ""
+"Split this event into multiple time sessions. If you choose “Tickets are "
+"issued per timeslot”, buyers must pick a specific session."
+msgstr ""
+"Разделете събитието на няколко часови сесии. Ако изберете „Билетите се "
+"издават за конкретен слот“, купувачът трябва да избере конкретна сесия."
+
+#: includes/class-event-timeslots-meta.php:62
+msgid "Ticketing mode"
+msgstr "Режим на билетиране"
+
+#: includes/class-event-timeslots-meta.php:65
+msgid "One ticket covers all timeslots"
+msgstr "Един билет покрива всички слотове"
+
+#: includes/class-event-timeslots-meta.php:68
+msgid "Tickets are issued per timeslot"
+msgstr "Билетите се издават за конкретен слот"
+
+#: includes/class-event-timeslots-meta.php:74
+msgid "Capacity mode"
+msgstr "Режим на капацитет"
+
+#: includes/class-event-timeslots-meta.php:77
+msgid "Event capacity only"
+msgstr "Само капацитет на събитието"
+
+#: includes/class-event-timeslots-meta.php:80
+msgid "Timeslot capacity only"
+msgstr "Само капацитет на слот"
+
+#: includes/class-event-timeslots-meta.php:83
+msgid "Both (event + timeslot)"
+msgstr "И двете (събитие + слот)"
+
+#: includes/class-event-timeslots-meta.php:99
+msgid "Slot ID is optional. If empty, one will be generated automatically."
+msgstr "ID на слот е по избор. Ако е празно, ще бъде генерирано автоматично."
+
+#: includes/class-event-timeslots-meta.php:103
+msgid "Add timeslot"
+msgstr "Добави слот"
+
+#: includes/class-event-timeslots-meta.php:132
+msgid "Slot ID"
+msgstr "ID на слот"
+
+#: includes/class-event-timeslots-meta.php:136
+msgid "Start"
+msgstr "Начало"
+
+#: includes/class-event-timeslots-meta.php:140
+msgid "End"
+msgstr "Край"
+
+#: includes/class-event-timeslots-meta.php:144
+msgid "Slot capacity"
+msgstr "Капацитет на слот"
+
+#: includes/email/class-ticket-email-renderer.php:181
+#: includes/email/class-ticket-email-renderer.php:308
+msgid ""
+"Present this email or your PDF ticket at the entrance. Staff can verify your "
+"ticket code."
+msgstr ""
+
+#: includes/class-calendar-service.php:340
+#, php-format
+msgid "Ticket generated by %s."
+msgstr ""
+
+#: includes/class-checkin-ajax.php:59
+msgid "Please provide a ticket code."
+msgstr ""
+
+#: includes/class-checkin-ajax.php:80
+msgid "This ticket has already been used."
+msgstr ""
+
+#: includes/class-checkin-ajax.php:112
+msgid "This ticket is cancelled and cannot be checked in."
+msgstr ""
+
+msgid "Event Tickets Setup Wizard"
+msgstr "Съветник за настройка на Event Tickets"
+
+msgid "Configure the essentials first. You can refine everything later in Settings."
+msgstr "Първо настройте най-важното. По-късно можете да донастроите всичко от Настройки."
+
+msgid "Before You Start"
+msgstr "Преди да започнете"
+
+msgid "This wizard will cover email basics, PDF defaults, ticket conflict protection, and starter pages."
+msgstr "Този съветник ще покрие основните имейл настройки, PDF настройките по подразбиране, защитата от конфликтни часове и началните страници."
+
+msgid "Set sender details and core ticket email subject"
+msgstr "Задайте данни на подателя и основна тема на имейла за билети"
+
+msgid "Enable overlap prevention for attendee timeslots"
+msgstr "Включете предотвратяване на припокриване на часови слотове за участниците"
+
+msgid "Create recommended pages for events and ticket actions"
+msgstr "Създайте препоръчителните страници за събития и действия с билети"
+
+msgid "Start Wizard"
+msgstr "Стартирай съветника"
+
+msgid "Skip to Get Started"
+msgstr "Пропусни към Начало"
+
+msgid "Go to Dashboard"
+msgstr "Към таблото"
+
+msgid "Step saved."
+msgstr "Стъпката е запазена."
+
+msgid "Email Basics"
+msgstr "Основни имейл настройки"
+
+msgid "Attach .ics file"
+msgstr "Прикачи .ics файл"
+
+msgid "An .ics file is a calendar invite file. Phones and email clients can open it directly to add the event to a calendar app."
+msgstr ".ics файлът е календарна покана. Телефоните и имейл клиентите могат да го отворят директно и да добавят събитието в календар."
+
+msgid "An .ics file is a calendar invite that users can open to add the event to their calendar app."
+msgstr ".ics файлът е календарна покана, която потребителите могат да отворят и да добавят събитието към своя календар."
+
+msgid "Email Template Preset"
+msgstr "Шаблон за имейл"
+
+msgid "PDF Basics"
+msgstr "Основни PDF настройки"
+
+msgid "Global PDF Template"
+msgstr "Глобален PDF шаблон"
+
+msgid "Allow Per-Event Override"
+msgstr "Позволи override за отделно събитие"
+
+msgid "If enabled, each event can choose its own PDF template instead of always using the global template."
+msgstr "Ако е включено, всяко събитие може да избира собствен PDF шаблон вместо винаги да използва глобалния."
+
+msgid "Shows the site logo (or site icon fallback) in generated PDF tickets."
+msgstr "Показва логото на сайта (или иконата на сайта като резервен вариант) в генерираните PDF билети."
+
+msgid "Blocks creating a ticket when the same attendee email already holds an active ticket for another event that overlaps in time."
+msgstr "Блокира създаването на билет, когато същият имейл на участник вече има активен билет за друго събитие, което се припокрива по време."
+
+msgid "If enabled, the system blocks issuing overlapping active tickets for the same attendee email."
+msgstr "Ако е включено, системата блокира издаването на припокриващи се активни билети за един и същ имейл на участник."
+
+msgid "Adds extra minutes before/after each event window when checking overlaps. Example: 15 adds a 15-minute safety buffer."
+msgstr "Добавя допълнителни минути преди/след времевия прозорец на всяко събитие при проверка за припокриване. Пример: 15 добавя 15-минутен буфер."
+
+msgid "Adds extra minutes before and after event windows when checking overlap conflicts."
+msgstr "Добавя допълнителни минути преди и след времевите прозорци на събитията при проверка за конфликти."
+
+msgid "Pages & Widgets"
+msgstr "Страници и джаджи"
+
+msgid "Create the recommended starter pages now without leaving the wizard."
+msgstr "Създайте препоръчителните начални страници сега, без да напускате съветника."
+
+msgid "This creates 4 pages: Events, Get Ticket, Ticket Actions, and Staff Check-in."
+msgstr "Това създава 4 страници: Събития, Вземи билет, Действия с билет и Check-in за персонал."
+
+msgid "Pages include starter guidance blocks. Then edit each page with Elementor and place the relevant widgets."
+msgstr "Страниците включват начални указания. След това редактирайте всяка страница с Elementor и поставете съответните джаджи."
+
+msgid "Creating pages..."
+msgstr "Създаване на страници..."
+
+msgid "Starter pages are ready."
+msgstr "Началните страници са готови."
+
+msgid "Could not create pages. Please try again."
+msgstr "Страниците не можаха да бъдат създадени. Моля, опитайте отново."
+
+msgid "You Are Ready"
+msgstr "Готово"
+
+msgid "Core setup is complete. Continue with detailed setup in Get Started or jump directly into management screens."
+msgstr "Основната настройка е завършена. Продължете с подробната настройка от Начало или преминете директно към екраните за управление."
+
+msgid "Open Get Started"
+msgstr "Отвори Начало"
+
+msgid "Default PDF template for all events."
+msgstr "PDF шаблон по подразбиране за всички събития."
+
+msgid "Allow Per-Event PDF Template Override"
+msgstr "Разреши PDF шаблон по събитие"
+
+msgid "When enabled, each event can override the global PDF template in the Event editor."
+msgstr "Когато е включено, всяко събитие може да override-не глобалния PDF шаблон в редактора на събитие."
+
+msgid "These are the built-in PDF layouts. Select one as global default above. If per-event override is enabled, events can choose a different template."
+msgstr "Това са вградените PDF оформления. Изберете едно като глобално по подразбиране. Ако е разрешен override по събитие, събитията могат да изберат различен шаблон."
+
+msgid "Per-event template override is disabled in global PDF settings. This event uses the global template."
+msgstr "Override на шаблон по събитие е изключен в глобалните PDF настройки. Това събитие използва глобалния шаблон."

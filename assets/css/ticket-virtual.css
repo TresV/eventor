@@ -1,0 +1,30 @@
+.evt-virtual {
+    margin-top: 16px;
+    padding: 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.evt-virtual__title {
+    margin: 0 0 10px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.evt-virtual__button {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: #111827;
+    color: #fff;
+    text-decoration: none;
+}
+
+.evt-virtual__button:hover {
+    opacity: 0.9;
+}
+
+.evt-virtual__embed {
+    margin-top: 10px;
+}
