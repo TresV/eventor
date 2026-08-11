@@ -192,7 +192,8 @@ class Settings_Store
                 'description_html' => wp_kses_post(
                     __(
                         'Control how ticket emails are sent to attendees.<br><br><strong>Available tokens:</strong> <code>{event_name}</code>, <code>{event_start}</code>, <code>{event_end}</code>, <code>{event_location}</code>, <code>{event_map_url}</code>, <code>{ticket_code}</code>, <code>{attendee_name}</code>, <code>{attendee_email}</code>, <code>{verify_url}</code>, <code>{ics_url}</code>, <code>{google_cal_url}</code>, <code>{pdf_url}</code>.',
-                        'Event-Tickets-for-Elementor')
+                        'Event-Tickets-for-Elementor'
+                    )
                 ),
                 'fields'      => [
                     [

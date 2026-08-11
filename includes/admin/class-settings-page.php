@@ -252,7 +252,7 @@ class Settings_Page
                         </tr>
                     </tbody>
                 </table>
-<?php
+            <?php
                 break;
             case 'number':
                 printf(
@@ -313,19 +313,19 @@ class Settings_Page
                         )
                     ) . '</p>';
                 }
-                ?>
+            ?>
                 <script>
-                (function () {
-                    var input = document.getElementById(<?php echo wp_json_encode($secret_input_id); ?>);
-                    var toggle = document.getElementById(<?php echo wp_json_encode($secret_input_id . '_toggle'); ?>);
-                    if (input && toggle) {
-                        toggle.addEventListener('change', function () {
-                            input.type = toggle.checked ? 'text' : 'password';
-                        });
-                    }
-                })();
+                    (function() {
+                        var input = document.getElementById(<?php echo wp_json_encode($secret_input_id); ?>);
+                        var toggle = document.getElementById(<?php echo wp_json_encode($secret_input_id . '_toggle'); ?>);
+                        if (input && toggle) {
+                            toggle.addEventListener('change', function() {
+                                input.type = toggle.checked ? 'text' : 'password';
+                            });
+                        }
+                    })();
                 </script>
-                <?php
+<?php
                 break;
             case 'textarea':
                 printf(

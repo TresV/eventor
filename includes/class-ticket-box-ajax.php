@@ -316,7 +316,8 @@ class Ticket_Box_Ajax
                     'Your request exceeded the per-email limit for this event. We created and emailed %d ticket.',
                     'Your request exceeded the per-email limit for this event. We created and emailed %d tickets.',
                     count($ticket_ids),
-                    'Event-Tickets-for-Elementor'),
+                    'Event-Tickets-for-Elementor'
+                ),
                 count($ticket_ids)
             );
         } elseif (count($ticket_ids) === $issue_count) {

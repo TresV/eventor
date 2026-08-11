@@ -44,7 +44,7 @@ $evt_order_ids = get_posts(
         'post_status'     => 'any',
         'posts_per_page'  => -1,
         'fields'          => 'ids',
-        'suppress_filters'=> true,
+        'suppress_filters' => true,
     ]
 );
 foreach ($evt_order_ids as $evt_order_id) {
