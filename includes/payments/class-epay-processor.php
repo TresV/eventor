@@ -188,14 +188,23 @@ class Epay_Processor implements Payment_Processor
 
         $amount = number_format($order->amount_minor() / 100, 2, '.', '');
 
+        // Return the buyer to the site after payment so the return-page
+        // poller (assets/js/payment-return.js) can pick up the order status.
+        // URL_OK/URL_CANCEL must be URL-encoded: ePay splits fields on ': '
+        // and a raw scheme (https://) would break parsing.
+        $ok_url     = add_query_arg('evt_order', $order->public_key(), home_url('/'));
+        $cancel_url = home_url('/');
+
         return sprintf(
-            'INVOICE=%d:AMOUNT=%s:CURRENCY=%s:EXP_TIME=%s:DESCR=%s:MIN=%s',
+            'INVOICE=%d:AMOUNT=%s:CURRENCY=%s:EXP_TIME=%s:DESCR=%s:MIN=%s:URL_OK=%s:URL_CANCEL=%s',
             $order->id(),
             $amount,
             $order->currency(),
             $exp_time,
             $title,
-            (string) $settings->get('epay_merchant_id', '')
+            (string) $settings->get('epay_merchant_id', ''),
+            rawurlencode($ok_url),
+            rawurlencode($cancel_url)
         );
     }
 

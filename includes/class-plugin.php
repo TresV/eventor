@@ -394,6 +394,40 @@ class Plugin
             ]
         );
 
+        // Payment return-page status polling (paid direct checkout).
+        // Enqueued only when the buyer lands back with ?evt_order=...
+        wp_register_script(
+            'evt-payment-return',
+            EVT_TICKETS_PLUGIN_URL . 'assets/js/payment-return.js',
+            [],
+            '0.1.0',
+            true
+        );
+
+        $evt_order_key = isset($_GET['evt_order']) ? sanitize_text_field(wp_unslash($_GET['evt_order'])) : '';
+        if ('' !== $evt_order_key) {
+            $evt_poll_url = rest_url('evt/v1/orders/' . rawurlencode($evt_order_key));
+            $evt_ref      = isset($_GET['evt_ref']) ? sanitize_text_field(wp_unslash($_GET['evt_ref'])) : '';
+            if ('' !== $evt_ref) {
+                $evt_poll_url = add_query_arg('ref', $evt_ref, $evt_poll_url);
+            }
+
+            wp_enqueue_script('evt-payment-return');
+            wp_localize_script(
+                'evt-payment-return',
+                'EvtPaymentReturn',
+                [
+                    'pollUrl' => esc_url_raw($evt_poll_url),
+                    'i18n'    => [
+                        'pending' => __('Payment received — your seats are held. Tickets are being prepared…', 'Event-Tickets-for-Elementor'),
+                        'paid'    => __('Payment confirmed — tickets are on their way to your inbox.', 'Event-Tickets-for-Elementor'),
+                        'failed'  => __('Payment was not completed. Your seats have been released.', 'Event-Tickets-for-Elementor'),
+                        'timeout' => __('Still confirming your payment — tickets will arrive by email shortly.', 'Event-Tickets-for-Elementor'),
+                    ],
+                ]
+            );
+        }
+
         // Events calendar + summary + map assets.
         wp_register_style(
             'evt-tickets-events-calendar',
