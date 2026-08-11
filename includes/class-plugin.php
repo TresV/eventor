@@ -133,6 +133,24 @@ class Plugin
     /** @var WooCommerce_Order_Ticketing */
     public $woocommerce_order_ticketing;
 
+    /** @var CPT_Orders */
+    public $cpt_orders;
+
+    /** @var Payments\Payment_Order_Service */
+    public $payment_orders;
+
+    /** @var Payments\Reservation_Service */
+    public $reservations;
+
+    /** @var Payments\Ticket_Issuance_Service */
+    public $ticket_issuance;
+
+    /** @var Payments\Refund_Service */
+    public $refunds;
+
+    /** @var Payments\Payment_Service */
+    public $payment_service;
+
     /** @var Admin\Ticket_Cancelled_Migrator */
     public $ticket_cancelled_migrator;
 
@@ -200,6 +218,16 @@ class Plugin
         $this->ticket_statuses      = new Ticket_Statuses();
         $this->ticket_service       = new Ticket_Service($this->settings, $this->event_capacity);
         $this->email_service        = new Email_Service($this->settings);
+
+        // Direct paid-ticket services (Stripe / ePay.bg — no WooCommerce).
+        $this->cpt_orders      = new CPT_Orders();
+        $this->payment_orders  = new Payments\Payment_Order_Service();
+        $this->reservations    = new Payments\Reservation_Service($this->event_capacity, $this->payment_orders);
+        $this->ticket_issuance = new Payments\Ticket_Issuance_Service($this->ticket_service, $this->email_service, $this->reservations);
+        $this->refunds         = new Payments\Refund_Service($this->payment_orders);
+        $this->payment_service = new Payments\Payment_Service($this->settings, $this->payment_orders, $this->reservations, $this->ticket_issuance, $this->refunds);
+        $this->payment_service->maybe_schedule_sweep();
+
         $this->calendar_service     = new Calendar_Service($this->settings);
         $this->pdf_ticket_service   = new Pdf_Ticket_Service($this->settings);
         $this->ticket_pdf_endpoint  = new Ticket_Pdf_Endpoint($this->settings, $this->pdf_ticket_service);
@@ -217,8 +245,18 @@ class Plugin
         $this->woocommerce_order_ticketing = new WooCommerce_Order_Ticketing(
             $this->ticket_service,
             $this->email_service,
-            $this->event_capacity
+            $this->event_capacity,
+            $this->ticket_issuance
         );
+
+        // Payment webhook/status REST controllers (payments namespace). Guarded
+        // so the plugin still loads if those files are not yet present.
+        if (class_exists(Payments\Payment_Webhook_Controller::class)) {
+            new Payments\Payment_Webhook_Controller($this->payment_service);
+        }
+        if (class_exists(Payments\Payment_Order_Status_Controller::class)) {
+            new Payments\Payment_Order_Status_Controller($this->payment_service);
+        }
         $this->ticket_cancelled_migrator = new Admin\Ticket_Cancelled_Migrator();
         $this->saved_views_ajax     = new Saved_Views_Ajax();
 
@@ -560,6 +598,11 @@ class Plugin
     public function payments(): WooCommerce_Checkout_Service
     {
         return $this->woocommerce_checkout_service;
+    }
+
+    public function payment_service(): Payments\Payment_Service
+    {
+        return $this->payment_service;
     }
 
     public function pdf(): Pdf_Ticket_Service

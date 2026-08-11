@@ -289,6 +289,44 @@ class Settings_Page
                     esc_attr($placeholder)
                 );
                 break;
+            case 'secret':
+                $secret_input_id = 'evt_secret_' . sanitize_key($key);
+                $secret_constant = $this->store->secret_constant_for($key);
+                $mask = '';
+                if ('' !== (string) $value) {
+                    $mask = '••••••••' . substr((string) $value, -4);
+                }
+                printf(
+                    '<input type="password" name="%1$s" id="%2$s" value="" class="regular-text" placeholder="%3$s" autocomplete="new-password" />',
+                    esc_attr($name),
+                    esc_attr($secret_input_id),
+                    esc_attr($mask)
+                );
+                echo ' <label style="display:inline-block;margin-left:8px;"><input type="checkbox" id="' . esc_attr($secret_input_id . '_toggle') . '" /> ' . esc_html__('Reveal', 'Event-Tickets-for-Elementor') . '</label>';
+                echo '<p class="description">' . esc_html__('Leave blank to keep the current key.', 'Event-Tickets-for-Elementor') . '</p>';
+                if (null !== $secret_constant) {
+                    echo '<p class="description">' . esc_html(
+                        sprintf(
+                            /* translators: %s is a wp-config.php constant name. */
+                            __('You can also set this via the %s constant in wp-config.php; it then overrides the stored value and is never written to the database, shown in full, or exposed via REST.', 'Event-Tickets-for-Elementor'),
+                            $secret_constant
+                        )
+                    ) . '</p>';
+                }
+                ?>
+                <script>
+                (function () {
+                    var input = document.getElementById(<?php echo wp_json_encode($secret_input_id); ?>);
+                    var toggle = document.getElementById(<?php echo wp_json_encode($secret_input_id . '_toggle'); ?>);
+                    if (input && toggle) {
+                        toggle.addEventListener('change', function () {
+                            input.type = toggle.checked ? 'text' : 'password';
+                        });
+                    }
+                })();
+                </script>
+                <?php
+                break;
             case 'textarea':
                 printf(
                     '<textarea name="%1$s" class="large-text" rows="3" placeholder="%3$s">%2$s</textarea>',

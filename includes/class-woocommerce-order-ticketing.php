@@ -2,7 +2,9 @@
 
 namespace EventTicketsElementor;
 
-use EventTicketsElementor\Tickets\Ticket_Email_Normalizer;
+use EventTicketsElementor\Payments\Payment_Order_Service;
+use EventTicketsElementor\Payments\Reservation_Service;
+use EventTicketsElementor\Payments\Ticket_Issuance_Service;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -10,25 +12,36 @@ if (! defined('ABSPATH')) {
 
 /**
  * Issues tickets from paid WooCommerce orders.
+ *
+ * All issuance logic now lives in Ticket_Issuance_Service (the single source
+ * of truth shared with the direct processor path); this class only feeds order
+ * item metadata into it.
  */
 class WooCommerce_Order_Ticketing
 {
     private Ticket_Service $tickets;
     private Email_Service $emails;
     private Event_Capacity $event_capacity;
-    private Event_Lock $lock;
-    private Event_Timeslots $timeslots;
+    private Ticket_Issuance_Service $issuance;
 
     public function __construct(
         Ticket_Service $tickets,
         Email_Service $emails,
-        Event_Capacity $event_capacity
+        Event_Capacity $event_capacity,
+        ?Ticket_Issuance_Service $issuance = null
     ) {
         $this->tickets = $tickets;
         $this->emails = $emails;
         $this->event_capacity = $event_capacity;
-        $this->lock = new Event_Lock();
-        $this->timeslots = new Event_Timeslots();
+
+        if ($issuance) {
+            $this->issuance = $issuance;
+        } else {
+            // Safety fallback so the class still works if constructed standalone.
+            $orders       = new Payment_Order_Service();
+            $reservations = new Reservation_Service($event_capacity, $orders);
+            $this->issuance = new Ticket_Issuance_Service($tickets, $emails, $reservations);
+        }
 
         add_action('woocommerce_order_status_processing', [$this, 'handle_paid_order']);
         add_action('woocommerce_order_status_completed', [$this, 'handle_paid_order']);
@@ -89,112 +102,39 @@ class WooCommerce_Order_Ticketing
      */
     private function issue_tickets_for_item($order, int $item_id, $item, array $request)
     {
-        $event_id = isset($request['event_id']) ? absint($request['event_id']) : 0;
-        $quantity = max(1, (int) $item->get_quantity());
-        $timeslot_id = isset($request['timeslot_id']) ? sanitize_key((string) $request['timeslot_id']) : '';
+        $event_id       = isset($request['event_id']) ? absint($request['event_id']) : 0;
+        $timeslot_id    = isset($request['timeslot_id']) ? sanitize_key((string) $request['timeslot_id']) : '';
         $attendee_email = isset($request['attendee_email']) ? sanitize_email((string) $request['attendee_email']) : '';
-        $attendee_name = isset($request['attendee_name']) ? sanitize_text_field((string) $request['attendee_name']) : '';
+        $attendee_name  = isset($request['attendee_name']) ? sanitize_text_field((string) $request['attendee_name']) : '';
         $attendee_phone = isset($request['attendee_phone']) ? sanitize_text_field((string) $request['attendee_phone']) : '';
+        $quantity       = max(1, (int) $item->get_quantity());
 
         if (! $event_id || '' === $attendee_email) {
             return new \WP_Error('evt_woo_missing_request', __('Ticket request metadata is incomplete on this WooCommerce order item.', 'Event-Tickets-for-Elementor'));
         }
 
-        $limit_one = (int) get_post_meta($event_id, Event_Timeslots::META_KEY_LIMIT_ONE_EMAIL, true);
-        $max_per_email = (int) get_post_meta($event_id, Event_Timeslots::META_KEY_MAX_PER_EMAIL, true);
-        $normalize = (int) get_post_meta($event_id, Event_Timeslots::META_KEY_NORMALIZE_EMAIL, true);
-        $normalized = $normalize ? Ticket_Email_Normalizer::normalize($attendee_email) : '';
-        if ($limit_one) {
-            $max_per_email = 1;
-            $quantity = 1;
+        $issued = $this->issuance->issue(
+            [
+                'event_id'         => $event_id,
+                'timeslot_id'      => $timeslot_id,
+                'quantity'         => $quantity,
+                'attendee_name'    => $attendee_name,
+                'attendee_email'   => $attendee_email,
+                'attendee_phone'   => $attendee_phone,
+                'source'           => 'woocommerce_order',
+                'source_id'        => $order->get_id() . ':' . $item_id,
+                'payment_provider' => 'woocommerce',
+                'payment_status'   => sanitize_key((string) $order->get_status()),
+                'order_id'         => (int) $order->get_id(),
+                'order_item_id'    => $item_id,
+            ]
+        );
+
+        if (is_wp_error($issued)) {
+            return new \WP_Error('evt_woo_ticket_issue_failed', $issued->get_error_message());
         }
 
-        $event_start = '';
-        $event_end = '';
-        if ($this->timeslots->requires_timeslot_selection($event_id)) {
-            if ('' === $timeslot_id) {
-                return new \WP_Error('evt_woo_missing_timeslot', __('This order item is missing the required event timeslot.', 'Event-Tickets-for-Elementor'));
-            }
-            $slot = $this->timeslots->get_slot($event_id, $timeslot_id);
-            if (! $slot) {
-                return new \WP_Error('evt_woo_invalid_timeslot', __('The event timeslot stored on this order item is no longer valid.', 'Event-Tickets-for-Elementor'));
-            }
-            $event_start = (string) ($slot['start'] ?? '');
-            $event_end = (string) ($slot['end'] ?? '');
-        }
-
-        $token = $this->lock->acquire($event_id, 15);
-        if ('' === $token) {
-            return new \WP_Error('evt_woo_event_locked', __('This event is being processed right now. Try the order status again in a moment.', 'Event-Tickets-for-Elementor'));
-        }
-
-        $capacity = new Event_Timeslot_Capacity($this->event_capacity, $this->timeslots);
-        $remaining_capacity = $capacity->remaining($event_id, $timeslot_id);
-        if (PHP_INT_MAX !== $remaining_capacity && $remaining_capacity < $quantity) {
-            $this->lock->release($event_id, $token);
-            return new \WP_Error('evt_woo_capacity_conflict', __('The event no longer has enough remaining capacity to fulfill this paid order item.', 'Event-Tickets-for-Elementor'));
-        }
-
-        if ($max_per_email > 0) {
-            $current = $this->tickets->count_tickets_for_event_email($event_id, $attendee_email, $normalized);
-            if (($current + $quantity) > $max_per_email) {
-                $this->lock->release($event_id, $token);
-                return new \WP_Error('evt_woo_ticket_limit', __('Issuing this order item would exceed the per-email ticket limit for the event.', 'Event-Tickets-for-Elementor'));
-            }
-        }
-
-        $ticket_ids = [];
-        for ($i = 0; $i < $quantity; $i++) {
-            $ticket_id = $this->tickets->create_ticket(
-                [
-                    'attendee_name'  => $attendee_name,
-                    'attendee_email' => $attendee_email,
-                    'event_id'       => $event_id,
-                    'event_start'    => $event_start,
-                    'event_end'      => $event_end,
-                    'source'         => 'woocommerce_order',
-                    'source_id'      => $order->get_id() . ':' . $item_id,
-                ]
-            );
-
-            if (is_wp_error($ticket_id)) {
-                foreach ($ticket_ids as $rollback_ticket_id) {
-                    wp_delete_post((int) $rollback_ticket_id, true);
-                }
-                $this->lock->release($event_id, $token);
-                return new \WP_Error('evt_woo_ticket_create_failed', $ticket_id->get_error_message());
-            }
-
-            $ticket_id = (int) $ticket_id;
-            $ticket_ids[] = $ticket_id;
-
-            update_post_meta($ticket_id, '_ticket_payment_provider', 'woocommerce');
-            update_post_meta($ticket_id, '_ticket_payment_status', sanitize_key((string) $order->get_status()));
-            update_post_meta($ticket_id, '_ticket_order_id', (int) $order->get_id());
-            update_post_meta($ticket_id, '_ticket_order_item_id', $item_id);
-
-            if ('' !== $timeslot_id) {
-                update_post_meta($ticket_id, '_ticket_timeslot_id', $timeslot_id);
-            }
-
-            if ('' !== $attendee_phone) {
-                update_post_meta($ticket_id, '_ticket_phone', $attendee_phone);
-            }
-
-            if (($limit_one || $max_per_email > 0) && $normalized) {
-                update_post_meta($ticket_id, '_ticket_email_normalized', $normalized);
-            }
-        }
-
-        $this->lock->release($event_id, $token);
-
-        if (1 === count($ticket_ids)) {
-            $this->emails->send_ticket_email((int) $ticket_ids[0]);
-        } elseif (! empty($ticket_ids)) {
-            $this->emails->send_multi_ticket_email($ticket_ids, $attendee_email, $attendee_name);
-        }
-
-        return $ticket_ids;
+        return is_array($issued) ? $issued : [];
     }
 
     /**

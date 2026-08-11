@@ -35,6 +35,22 @@ foreach ($evt_options as $evt_option) {
     delete_option($evt_option);
 }
 
+// Payment orders are transactional/financial records — unlike event/ticket
+// posts (intentionally left in place), they are removed on uninstall so
+// payment data does not linger without the plugin to interpret it.
+$evt_order_ids = get_posts(
+    [
+        'post_type'       => 'evt_order',
+        'post_status'     => 'any',
+        'posts_per_page'  => -1,
+        'fields'          => 'ids',
+        'suppress_filters'=> true,
+    ]
+);
+foreach ($evt_order_ids as $evt_order_id) {
+    wp_delete_post((int) $evt_order_id, true);
+}
+
 // Remove the managed Staff role and strip plugin caps from core roles.
 if (function_exists('wp_roles')) {
     remove_role('evt_staff');
@@ -71,6 +87,20 @@ if (function_exists('wp_roles')) {
         'delete_others_evt_tickets',
         'edit_private_evt_tickets',
         'edit_published_evt_tickets',
+        // Payment order CPT capabilities.
+        'edit_evt_order',
+        'read_evt_order',
+        'delete_evt_order',
+        'edit_evt_orders',
+        'edit_others_evt_orders',
+        'publish_evt_orders',
+        'read_private_evt_orders',
+        'delete_evt_orders',
+        'delete_private_evt_orders',
+        'delete_published_evt_orders',
+        'delete_others_evt_orders',
+        'edit_private_evt_orders',
+        'edit_published_evt_orders',
     ];
 
     foreach (['administrator', 'editor'] as $evt_role_name) {

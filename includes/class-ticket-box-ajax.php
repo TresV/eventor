@@ -28,6 +28,14 @@ class Ticket_Box_Ajax
         add_action('wp_ajax_nopriv_evt_ticket_box_timeslots', [$this, 'handle_timeslots']);
     }
 
+    /**
+     * Shared ticket issuance service (single source of truth for free + paid).
+     */
+    private function issuance(): \EventTicketsElementor\Payments\Ticket_Issuance_Service
+    {
+        return Plugin::instance()->ticket_issuance;
+    }
+
     public function handle_timeslots(): void
     {
         check_ajax_referer('evt_ticket_box', 'nonce');
@@ -188,14 +196,10 @@ class Ticket_Box_Ajax
             }
         }
 
-        $ticket_service = Plugin::instance()->ticket_service;
-        $email_service  = Plugin::instance()->email_service;
-        $payment_service = Plugin::instance()->payments();
-        $capacity       = new Event_Timeslot_Capacity(Plugin::instance()->event_capacity, $this->timeslots);
+        $payment_service = Plugin::instance()->payment_service();
+        $reservations    = Plugin::instance()->reservations;
 
-        $ticket_ids = [];
-
-        $remaining = $capacity->remaining($event_id, $timeslot_id);
+        $remaining = $reservations->remaining($event_id, $timeslot_id);
         if (PHP_INT_MAX !== $remaining) {
             if ($remaining <= 0) {
                 \evt_json_error('evt_event_sold_out', __('This event is sold out.', 'Event-Tickets-for-Elementor'), 409);
@@ -206,95 +210,103 @@ class Ticket_Box_Ajax
         }
 
         if ($payment_service->is_event_paid($event_id)) {
-            if (! $payment_service->is_connected()) {
-                \evt_json_error(
-                    'evt_woocommerce_not_ready',
-                    __('Paid ticket checkout is not available right now. Please contact the organizer.', 'Event-Tickets-for-Elementor'),
-                    503
+            $mode = $payment_service->mode();
+
+            if ('direct' === $mode) {
+                $checkout = $payment_service->begin_payment(
+                    [
+                        'event_id'       => $event_id,
+                        'timeslot_id'    => $timeslot_id,
+                        'quantity'       => $limit_one ? 1 : $quantity,
+                        'attendee_name'  => $attendee_name,
+                        'attendee_phone' => $attendee_phone,
+                        'attendee_email' => $attendee_email,
+                    ]
                 );
+
+                if (is_wp_error($checkout)) {
+                    \evt_json_error('evt_checkout_failed', $checkout->get_error_message(), 400);
+                }
+
+                $response = [
+                    'redirect_url' => (string) $checkout['redirect_url'],
+                    'order_key'    => (string) ($checkout['order_key'] ?? ''),
+                    'hold_minutes' => (int) ($checkout['hold_minutes'] ?? 30),
+                    'message'      => __('Redirecting to secure payment…', 'Event-Tickets-for-Elementor'),
+                ];
+                if (isset($remaining_for_email)) {
+                    $response['remaining'] = (int) $remaining_for_email;
+                }
+
+                \evt_json_success($response);
             }
 
-            $checkout = $payment_service->begin_checkout(
-                [
-                    'event_id'       => $event_id,
-                    'timeslot_id'    => $timeslot_id,
-                    'quantity'       => $limit_one ? 1 : $quantity,
-                    'attendee_name'  => $attendee_name,
-                    'attendee_phone' => $attendee_phone,
-                    'attendee_email' => $attendee_email,
-                    'return_url'     => $current_url,
-                ]
+            if ('woocommerce' === $mode) {
+                $wc = Plugin::instance()->payments();
+                if (! $wc->is_connected()) {
+                    \evt_json_error(
+                        'evt_woocommerce_not_ready',
+                        __('Paid ticket checkout is not available right now. Please contact the organizer.', 'Event-Tickets-for-Elementor'),
+                        503
+                    );
+                }
+
+                $checkout = $wc->begin_checkout(
+                    [
+                        'event_id'       => $event_id,
+                        'timeslot_id'    => $timeslot_id,
+                        'quantity'       => $limit_one ? 1 : $quantity,
+                        'attendee_name'  => $attendee_name,
+                        'attendee_phone' => $attendee_phone,
+                        'attendee_email' => $attendee_email,
+                        'return_url'     => $current_url,
+                    ]
+                );
+
+                if (is_wp_error($checkout)) {
+                    \evt_json_error('evt_checkout_failed', $checkout->get_error_message(), 400);
+                }
+
+                $response = [
+                    'redirect_url' => (string) $checkout['redirect_url'],
+                    'message'      => __('Redirecting to WooCommerce checkout…', 'Event-Tickets-for-Elementor'),
+                ];
+                if (isset($remaining_for_email)) {
+                    $response['remaining'] = (int) $remaining_for_email;
+                }
+
+                \evt_json_success($response);
+            }
+
+            \evt_json_error(
+                'evt_checkout_not_ready',
+                __('Paid ticket checkout is not available right now. Please contact the organizer.', 'Event-Tickets-for-Elementor'),
+                503
             );
-
-            if (is_wp_error($checkout)) {
-                \evt_json_error('evt_checkout_failed', $checkout->get_error_message(), 400);
-            }
-
-            $response = [
-                'redirect_url' => (string) $checkout['redirect_url'],
-                'message'      => __('Redirecting to WooCommerce checkout…', 'Event-Tickets-for-Elementor'),
-            ];
-            if (isset($remaining_for_email)) {
-                $response['remaining'] = (int) $remaining_for_email;
-            }
-
-            \evt_json_success($response);
         }
 
-        // Basic concurrency guard to reduce oversells.
-        $token = $this->lock->acquire($event_id, 15);
-        if ('' === $token) {
-            \evt_json_error('evt_event_locked', __('This event is being booked right now. Please try again in a moment.', 'Event-Tickets-for-Elementor'), 409);
-        }
-
+        // Issue through the shared service (capacity, per-email limit,
+        // exclusivity, rollback, and email are all enforced there).
         $issue_count = $limit_one ? 1 : $quantity;
 
-        for ($i = 0; $i < $issue_count; $i++) {
-            // Re-check before each ticket to reduce race-window.
-            $remaining_now = $capacity->remaining($event_id, $timeslot_id);
-            if (PHP_INT_MAX !== $remaining_now && $remaining_now <= 0) {
-                break;
-            }
-
-            $ticket_id = $ticket_service->create_ticket([
+        $issued = $this->issuance()->issue(
+            [
+                'event_id'       => $event_id,
+                'timeslot_id'    => $timeslot_id,
+                'quantity'       => $issue_count,
                 'attendee_name'  => $attendee_name,
                 'attendee_email' => $attendee_email,
-                'event_id'       => $event_id,
-                'event_start'    => $event_start,
-                'event_end'      => $event_end,
+                'attendee_phone' => $attendee_phone,
                 'source'         => 'ticket_box',
                 'source_id'      => 'widget_' . time(),
-            ]);
+            ]
+        );
 
-            if (is_wp_error($ticket_id)) {
-                $this->lock->release($event_id, $token);
-                \evt_json_error('evt_ticket_create_failed', $ticket_id->get_error_message(), 400);
-            }
-
-            $ticket_ids[] = $ticket_id;
-
-            if ('' !== $timeslot_id) {
-                update_post_meta((int) $ticket_id, '_ticket_timeslot_id', $timeslot_id);
-            }
-
-            if ('' !== $attendee_phone) {
-                update_post_meta((int) $ticket_id, '_ticket_phone', $attendee_phone);
-            }
-
-            if (($limit_one || $max_per_email > 0) && $normalized) {
-                update_post_meta((int) $ticket_id, '_ticket_email_normalized', $normalized);
-            }
+        if (is_wp_error($issued)) {
+            \evt_json_error('evt_ticket_create_failed', $issued->get_error_message(), 400);
         }
 
-        $this->lock->release($event_id, $token);
-
-        if (! empty($ticket_ids)) {
-            if (1 === count($ticket_ids)) {
-                $email_service->send_ticket_email((int) $ticket_ids[0]);
-            } else {
-                $email_service->send_multi_ticket_email($ticket_ids, $attendee_email, $attendee_name);
-            }
-        }
+        $ticket_ids = is_array($issued) ? $issued : [];
 
         $message = '';
         if ($email_limit_adjusted) {

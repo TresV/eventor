@@ -16,6 +16,27 @@ class Settings_Store
     public const OPTION_KEY = 'evt_tickets_settings';
 
     /**
+     * Sentinel used by secret fields: when a secret field is submitted with
+     * this value (or empty), the stored value is kept instead of overwritten.
+     */
+    public const SECRET_KEEP_SENTINEL = '__KEEP__';
+
+    /**
+     * Setting key => wp-config.php constant override.
+     * When the constant is defined and truthy it takes precedence over the stored option.
+     *
+     * @var array<string,string>
+     */
+    public const SECRET_CONSTANTS = [
+        'stripe_secret_key'          => 'EVT_STRIPE_SECRET_KEY',
+        'stripe_test_secret_key'     => 'EVT_STRIPE_TEST_SECRET_KEY',
+        'stripe_webhook_secret'      => 'EVT_STRIPE_WEBHOOK_SECRET',
+        'stripe_test_webhook_secret' => 'EVT_STRIPE_TEST_WEBHOOK_SECRET',
+        'epay_merchant_id'           => 'EVT_EPAY_MERCHANT_ID',
+        'epay_secret'                => 'EVT_EPAY_SECRET',
+    ];
+
+    /**
      * @var array<string,array<string,mixed>>
      */
     private array $fields_index = [];
@@ -63,8 +84,27 @@ class Settings_Store
      */
     public function get(string $key, $default = '')
     {
+        $constant = $this->secret_constant_for($key);
+        if (null !== $constant && defined($constant)) {
+            $override = constant($constant);
+            if (! empty($override)) {
+                return $override;
+            }
+        }
+
         $options = get_option(self::OPTION_KEY, []);
         return $options[$key] ?? $default;
+    }
+
+    /**
+     * Return the wp-config.php constant name that overrides a setting key, if any.
+     *
+     * @param string $key
+     * @return string|null
+     */
+    public function secret_constant_for(string $key): ?string
+    {
+        return self::SECRET_CONSTANTS[$key] ?? null;
     }
 
     /**
@@ -96,6 +136,11 @@ class Settings_Store
 
         foreach ($this->fields_index as $key => $field) {
             if (array_key_exists($key, $input)) {
+                // Secret fields keep their stored value unless a new non-empty
+                // value was actually submitted (blank/sentinel never wipe it).
+                if ('secret' === ($field['type'] ?? '') && $this->should_keep_secret($input[$key])) {
+                    continue;
+                }
                 $output[$key] = $this->sanitize_field($input[$key], $field);
             }
         }
@@ -135,6 +180,8 @@ class Settings_Store
     {
         $blogname    = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
         $admin_email = get_option('admin_email');
+        $stripe_webhook_url = rest_url('evt/v1/payments/stripe/webhook');
+        $epay_webhook_url   = rest_url('evt/v1/payments/epay/webhook');
 
         return [
             [
@@ -649,6 +696,97 @@ class Settings_Store
                     ],
                 ],
             ],
+            [
+                'id'          => 'evt_tickets_payments_processors_section',
+                'title'       => __('Payment Processors (Direct Checkout)', 'Event-Tickets-for-Elementor'),
+                'description' => __('Paid ticket requests can go directly to a hosted payment page (Stripe for global cards, ePay.bg for Bulgarian bank cards) without WooCommerce.', 'Event-Tickets-for-Elementor'),
+                'tab'         => 'payments',
+                'fields'      => [
+                    [
+                        'key'         => 'payment_processor',
+                        'label'       => __('Active Processor', 'Event-Tickets-for-Elementor'),
+                        'description' => __('Choose where paid ticket requests are sent. myPOS support arrives in Phase 2.', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'select',
+                        'default'     => '',
+                        'options'     => [
+                            ''            => __('Auto — WooCommerce if connected', 'Event-Tickets-for-Elementor'),
+                            'woocommerce' => __('WooCommerce (fallback)', 'Event-Tickets-for-Elementor'),
+                            'stripe'      => __('Stripe — Global cards', 'Event-Tickets-for-Elementor'),
+                            'epay'        => __('ePay.bg — Bulgaria', 'Event-Tickets-for-Elementor'),
+                        ],
+                    ],
+                    [
+                        'key'         => 'payment_currency',
+                        'label'       => __('Currency', 'Event-Tickets-for-Elementor'),
+                        'description' => __('ISO-4217 code used for direct checkout amounts (e.g. EUR).', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'text',
+                        'default'     => 'EUR',
+                    ],
+                    [
+                        'key'         => 'payment_hold_ttl_minutes',
+                        'label'       => __('Seat Hold (minutes)', 'Event-Tickets-for-Elementor'),
+                        'description' => __('How long a pending payment holds the seats before they are released.', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'number',
+                        'default'     => 30,
+                    ],
+                    [
+                        'key'         => 'stripe_mode',
+                        'label'       => __('Stripe Mode', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'select',
+                        'default'     => 'test',
+                        'options'     => [
+                            'live' => __('Live', 'Event-Tickets-for-Elementor'),
+                            'test' => __('Test', 'Event-Tickets-for-Elementor'),
+                        ],
+                    ],
+                    [
+                        'key'         => 'stripe_secret_key',
+                        'label'       => __('Stripe Secret Key (live)', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'secret',
+                    ],
+                    [
+                        'key'         => 'stripe_test_secret_key',
+                        'label'       => __('Stripe Secret Key (test)', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'secret',
+                    ],
+                    [
+                        'key'         => 'stripe_webhook_secret',
+                        'label'       => __('Stripe Webhook Secret (live)', 'Event-Tickets-for-Elementor'),
+                        'description' => sprintf(
+                            /* translators: %s is the Stripe webhook URL. */
+                            __('The whsec_... value from the Stripe dashboard; the webhook URL is %s.', 'Event-Tickets-for-Elementor'),
+                            $stripe_webhook_url
+                        ),
+                        'type'        => 'secret',
+                    ],
+                    [
+                        'key'         => 'stripe_test_webhook_secret',
+                        'label'       => __('Stripe Webhook Secret (test)', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'secret',
+                    ],
+                    [
+                        'key'         => 'epay_merchant_id',
+                        'label'       => __('ePay.bg Merchant ID (MIN)', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'text',
+                    ],
+                    [
+                        'key'         => 'epay_secret',
+                        'label'       => __('ePay.bg Secret', 'Event-Tickets-for-Elementor'),
+                        'description' => sprintf(
+                            /* translators: %s is the ePay.bg IPN URL. */
+                            __('The IPN URL is %s.', 'Event-Tickets-for-Elementor'),
+                            $epay_webhook_url
+                        ),
+                        'type'        => 'secret',
+                    ],
+                    [
+                        'key'         => 'epay_test_mode',
+                        'label'       => __('ePay.bg Demo mode', 'Event-Tickets-for-Elementor'),
+                        'type'        => 'checkbox',
+                        'default'     => 1,
+                    ],
+                ],
+            ],
         ];
     }
 
@@ -673,6 +811,21 @@ class Settings_Store
         }
 
         return $fields;
+    }
+
+    /**
+     * Whether a secret field submission should keep the stored value.
+     * Empty values and the sentinel both mean "leave the stored secret unchanged".
+     *
+     * @param mixed $value
+     * @return bool
+     */
+    private function should_keep_secret($value): bool
+    {
+        if (self::SECRET_KEEP_SENTINEL === $value) {
+            return true;
+        }
+        return '' === trim((string) $value);
     }
 
     /**
@@ -706,6 +859,8 @@ class Settings_Store
                 return $value ? $value : '';
             case 'email':
                 return sanitize_email((string) $value);
+            case 'secret':
+                return sanitize_text_field((string) $value);
             case 'textarea':
                 return wp_kses_post((string) $value);
             case 'text':
