@@ -67,12 +67,16 @@ Stripe cards are processed in **EUR**, which is the default currency (see sectio
 5. **Enter the credentials:**
    - **ePay.bg Merchant ID (MIN)**,
    - **ePay.bg Secret**.
-6. **Optionally enable ePay.bg Demo mode** while you test.
-7. **Register the IPN URL with ePay.bg** so the plugin receives payment confirmations:
+6. **Optionally enable ePay.bg Demo mode** while you test (in demo you can set the notification URL yourself).
+7. **Register the IPN (notification) URL with ePay.bg** so the plugin receives payment confirmations:
 
    ```
    <site>/wp-json/evt/v1/payments/epay/webhook
    ```
+
+   In **production** ePay sets this address for you: email your **CIN (Merchant ID)** and this URL to **merchant@epay.bg** (Commercial Department). You cannot change it yourself from the ePay profile.
+
+> **Note on ePay.bg** — the plugin implements the official ePay WEB API: the payment request is base64-encoded with an HMAC-SHA1 checksum, and the IPN carries no amount, so the amount is checked against the stored order. Verify a payment in **Demo mode** before going live.
 
 **Refunds (Phase 1):** ePay.bg refunds are initiated from the **ePay merchant panel** — the plugin then detects the refunded status and marks the order and its tickets as refunded. See section 10.
 

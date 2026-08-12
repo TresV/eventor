@@ -305,8 +305,13 @@ class Payment_Service
             return ['processed' => true, 'duplicate' => true, 'status' => $order->status(), 'order_id' => $order->id()];
         }
 
-        // Amount + currency verification before anything else.
-        if ($event->amount_minor !== $order->amount_minor() || strtoupper($event->currency) !== strtoupper($order->currency())) {
+        // Amount + currency verification before anything else. ePay's IPN
+        // carries no amount, so only enforce when the processor reports one
+        // (Stripe) — ePay relies on signature + invoice lookup instead.
+        if (
+            ($event->amount_minor > 0 && $event->amount_minor !== $order->amount_minor())
+            || ('' !== $event->currency && strtoupper($event->currency) !== strtoupper($order->currency()))
+        ) {
             $this->orders->set_status($order->id(), CPT_Orders::STATUS_FAILED);
             update_post_meta($order->id(), '_evt_order_error', 'amount_mismatch');
             return ['processed' => false, 'error' => 'amount_mismatch'];
