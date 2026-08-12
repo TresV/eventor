@@ -21,4 +21,4 @@ Use the built-in Staff role when you want event-day operators to work with ticke
 
 ## Practical recommendation
 
-Start with the Event Tickets capability group only, then grant extra WordPress or WooCommerce capabilities only if you have a real operational reason.
+Start with the Event Tickets capability group only, then grant extra WordPress capabilities only if you have a real operational reason.

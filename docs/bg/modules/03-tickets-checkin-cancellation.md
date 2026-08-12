@@ -16,7 +16,7 @@
 
 - Ticket Box AJAX
 - Elementor Pro Forms integration
-- WooCommerce поток за платени билети
+- Директен поток с процесор за плащания (Stripe / ePay.bg)
 
 ## Текущи бележки за check-in
 

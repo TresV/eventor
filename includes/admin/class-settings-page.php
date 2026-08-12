@@ -375,7 +375,7 @@ class Settings_Page
             case 'pdf':
                 return __('Default PDF templates, branding, and ticket attachment output.', 'Event-Tickets-for-Elementor');
             case 'payments':
-                return __('WooCommerce checkout flow, product mapping, and paid ticket handling.', 'Event-Tickets-for-Elementor');
+                return __('Payment processor connections, currency, seat holds, and paid ticket handling.', 'Event-Tickets-for-Elementor');
             case 'email':
             default:
                 return __('Email content, templates, attachments, and client-specific delivery behavior.', 'Event-Tickets-for-Elementor');

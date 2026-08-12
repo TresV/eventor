@@ -1,6 +1,6 @@
 # Event Tickets for Elementor
 
-Event ticketing for [Elementor](https://elementor.com/) with QR/PDF/ICS delivery, attendee flows, and WooCommerce-powered paid checkout.
+Event ticketing for [Elementor](https://elementor.com/) with QR/PDF/ICS delivery, attendee flows, and direct payment processor checkout (Stripe globally, ePay.bg for Bulgaria).
 
 ## Features
 
@@ -8,7 +8,7 @@ Event ticketing for [Elementor](https://elementor.com/) with QR/PDF/ICS delivery
 - **Ticket issuance & delivery** – attendee tickets with unique codes, QR codes, and rich HTML emails (with PDF + ICS + Google Calendar attachments/links).
 - **Self-service attendee flows** – ticket lookup, PDF download, cancel ticket (with email-confirmed cancellation), and staff check-in via QR scanning.
 - **Elementor integration** – a full set of widgets (Events Browser with list/grid/month/map views and filters, Events List, Summary, Calendar, Map, Ticket Box, Ticket View, Cancel, Resend, Check-in) plus dynamic tags and theme display conditions.
-- **WooCommerce checkout** – sell tickets through WooCommerce orders.
+- **Paid ticketing** – sell tickets through a direct payment processor checkout (Stripe globally, ePay.bg for Bulgaria) with seat holds, webhook verification, and full-order refunds.
 - **Staff role** – built-in plugin-managed `evt_staff` role with granular capabilities and check-in routing.
 
 ## Requirements
@@ -16,7 +16,6 @@ Event ticketing for [Elementor](https://elementor.com/) with QR/PDF/ICS delivery
 - WordPress 5.8+ (6.x recommended)
 - PHP 7.4+ (8.x recommended)
 - [Elementor](https://elementor.com/) (free; some features require Elementor Pro)
-- Optional: [WooCommerce](https://woocommerce.com/) for paid checkout
 
 ## Installation
 

@@ -241,43 +241,6 @@ class Ticket_Box_Ajax
                 \evt_json_success($response);
             }
 
-            if ('woocommerce' === $mode) {
-                $wc = Plugin::instance()->payments();
-                if (! $wc->is_connected()) {
-                    \evt_json_error(
-                        'evt_woocommerce_not_ready',
-                        __('Paid ticket checkout is not available right now. Please contact the organizer.', 'Event-Tickets-for-Elementor'),
-                        503
-                    );
-                }
-
-                $checkout = $wc->begin_checkout(
-                    [
-                        'event_id'       => $event_id,
-                        'timeslot_id'    => $timeslot_id,
-                        'quantity'       => $limit_one ? 1 : $quantity,
-                        'attendee_name'  => $attendee_name,
-                        'attendee_phone' => $attendee_phone,
-                        'attendee_email' => $attendee_email,
-                        'return_url'     => $current_url,
-                    ]
-                );
-
-                if (is_wp_error($checkout)) {
-                    \evt_json_error('evt_checkout_failed', $checkout->get_error_message(), 400);
-                }
-
-                $response = [
-                    'redirect_url' => (string) $checkout['redirect_url'],
-                    'message'      => __('Redirecting to WooCommerce checkout…', 'Event-Tickets-for-Elementor'),
-                ];
-                if (isset($remaining_for_email)) {
-                    $response['remaining'] = (int) $remaining_for_email;
-                }
-
-                \evt_json_success($response);
-            }
-
             \evt_json_error(
                 'evt_checkout_not_ready',
                 __('Paid ticket checkout is not available right now. Please contact the organizer.', 'Event-Tickets-for-Elementor'),

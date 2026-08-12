@@ -1,7 +1,6 @@
 # Paid Ticketing — Direct Processor Integration (Phase 1 Spec)
 
-> Status: **Draft for review — no code written yet.**
-> Supersedes the WooCommerce-only sketch in earlier discussions. Direction: **Option C — direct processor integration, no WooCommerce dependency for paid tickets.** WooCommerce bridge remains intact as an optional fallback.
+> Status: **Implemented — Phase 1 shipped on `v2-pmts`.** Direction: **Option C — direct processor integration, no WooCommerce dependency for paid tickets.** The WooCommerce checkout bridge and product mapping were fully removed; paid tickets route directly to Stripe / ePay.bg.
 
 ## 1. Goals & non-goals (Phase 1)
 
@@ -38,11 +37,11 @@ Ticket_Issuance_Service  ← extracted single source of truth
 existing Ticket_Service / Email_Service / Event_Capacity / Event_Timeslot_Capacity
 ```
 
-### 2.1 Existing seam (verified)
+### 2.1 Seam (final state)
 
-- `Plugin::payments()` returns `WooCommerce_Checkout_Service`. Phase 1 changes it to return the new processor facade (`Payment_Service`) and adds `Plugin::payment_service()`. `Ticket_Box_Ajax::handle()` already calls the generic `is_event_paid()` / `is_connected()` / `begin_checkout()` — the paid branch swaps to the direct path; WC branch retained behind a setting.
-- `WooCommerce_Order_Ticketing::issue_tickets_for_item()` contains the full issuance logic (timeslot validation, exclusivity *not* enforced, per-email limit, capacity, rollback on failure, email send). This becomes `Ticket_Issuance_Service`; the WC order hook and the webhook handler both call it. The free-path inline issuance in `Ticket_Box_Ajax` is deduplicated onto the same service.
-- `payments` settings tab exists in `class-settings-store.php` (section `evt_tickets_payments_woocommerce_section`). Add a `evt_tickets_payments_processors_section`.
+- `Plugin::payment_service()` returns the `Payment_Service` facade (direct processors only — no WooCommerce). The old `Plugin::payments()` WooCommerce seam was removed along with `WooCommerce_Checkout_Service` / `WooCommerce_Order_Ticketing`.
+- `Ticket_Issuance_Service` is the single source of truth for issuance (timeslot validity, exclusivity, per-email limit, capacity, rollback on failure, email send). The webhook handler and the free-path inline issuance in `Ticket_Box_Ajax` both route through it.
+- The Payments settings tab exposes the processor schema under `evt_tickets_payments_processors_section`; the processor status block lives in `includes/admin/class-payment-processor-settings.php`.
 
 ## 3. Data model — `evt_order` CPT
 
@@ -128,7 +127,7 @@ interface Payment_Processor {
   - Renderer: password-style input showing only last 4 chars + "show/reveal" toggle + "saved" indicator; value sent to server only when changed (empty submission keeps existing).
   - **Never** expose secrets via any REST settings endpoint or admin-ajax response.
 - **`wp-config.php` override**: constants take precedence over stored options, e.g. `EVT_STRIPE_SECRET_KEY`, `EVT_EPAY_SECRET`, `EVT_EPAY_MERCHANT_ID`. Documented in the settings help text.
-- **Payments tab additions**: active processor picker (`stripe`/`epay`/`mypos`/`woocommerce` fallback), per-processor credentials, live/test toggle, hold TTL, "test webhook" button, and a "Recommended gateways: Bulgaria (ePay.bg) + Global (Stripe)" helper note.
+- **Payments tab additions**: active processor picker (`stripe`/`epay`), per-processor credentials, live/test toggle, hold TTL, "test webhook" button, and a "Recommended gateways: Bulgaria (ePay.bg) + Global (Stripe)" helper note.
 
 ## 9. Refund wiring (fills the real gap)
 
@@ -153,32 +152,35 @@ interface Payment_Processor {
 - `includes/payments/class-payment-order-service.php` — order CRUD + status transitions.
 - `includes/payments/class-reservation-service.php` — hold counters, TTL, sweep, `Event_Lock` guards.
 - `includes/payments/class-refund-service.php` — listens to refund actions, calls processor, updates order+tickets.
-- `includes/payments/class-ticket-issuance-service.php` — **extracted** from `WooCommerce_Order_Ticketing::issue_tickets_for_item()`.
+- `includes/payments/class-ticket-issuance-service.php` — single source of truth for issuance (extracted from the paid + free paths).
 - `includes/payments/class-payment-webhook-controller.php` — `register_rest_route` + idempotency.
 - `includes/payments/class-payment-order-status-controller.php` — public return-page status.
 - `includes/payments/class-order-record.php` — lightweight value object passed to processors.
 - `docs/modules/09-paid-ticketing-merchant-guide.md` — gateway setup, N-18 note, cache/WAF exclusions.
 
 **Modified**
-- `includes/class-plugin.php` — instantiate services; `Plugin::payment_service()`; keep `Plugin::payments()` (WC fallback).
+- `includes/class-plugin.php` — instantiate services; `Plugin::payment_service()`; WooCommerce/Google Wallet wiring removed.
 - `includes/class-ticket-box-ajax.php` — paid branch → direct path; dedupe free-path issuance onto `Ticket_Issuance_Service`; add return-page polling response.
-- `includes/class-woocommerce-order-ticketing.php` — delegate to `Ticket_Issuance_Service` (behavior unchanged).
 - `includes/class-settings-store.php` — `secret` type + processors section.
 - `includes/admin/class-settings-page.php` — render `secret` field.
-- `includes/admin/class-woocommerce-settings.php` — becomes "Payment processors" status block (WC section retained as fallback status).
+- `includes/admin/class-payment-processor-settings.php` — processor status block (replaces the former WooCommerce status block).
 - `uninstall.php` — delete `evt_order` posts/meta + caps cleanup.
 - `includes/requirements.php` — require new files.
 
+**Removed**
+- `includes/class-woocommerce-checkout-service.php`, `includes/class-woocommerce-order-ticketing.php`, `includes/admin/class-woocommerce-settings.php`, `includes/class-google-wallet-service.php`.
+
 ## 12. Phasing
 
-- **Phase 1 (this spec)**: `evt_order`, reservation holds, `Ticket_Issuance_Service` extraction, Stripe + ePay processors, webhook + return-page polling, secrets field, full-order refunds, WC fallback retained.
+- **Phase 1 (shipped)**: `evt_order`, reservation holds, `Ticket_Issuance_Service` extraction, Stripe + ePay processors, webhook + return-page polling, secrets field, full-order refunds. WooCommerce and Google Wallet removed from the codebase.
 - **Phase 2**: myPOS processor (RSA verify), per-ticket partial refunds (same ledger), multi-currency, order reconciliation notes in admin, myPOS/other BG scheme expansion.
 - **Phase 3**: platform mode — per-merchant onboarding (Stripe Connect-style) + payouts on the same `Payment_Processor` seam.
 
-## 13. Open items for review
+## 13. Decisions (resolved)
 
-1. Uninstall behavior for `evt_order` (recommended: delete, since transactional; confirm).
-2. Hold TTL default (proposed 30 min) and whether it should be per-event override.
-3. Full-order-only refunds accepted for Phase 1? (per-ticket partials are a Phase 2 item on the same ledger).
-4. ePay.bg merchant onboarding (account needed per site) — merchant-facing doc covers it, confirm acceptable for a distributed plugin.
-5. Exclusivity policy — confirmed: enforced at checkout-begin **and** at issuance (single rule in `Ticket_Issuance_Service`).
+1. **Uninstall behavior**: `evt_order` posts + meta are deleted on uninstall (transactional data). — **implemented**.
+2. **Hold TTL default**: 30 minutes, configurable via `payment_hold_ttl_minutes`. — **implemented**.
+3. **Full-order-only refunds** accepted for Phase 1 (per-ticket partials are a Phase 2 item on the same ledger). — **implemented**.
+4. **ePay.bg merchant onboarding** (account needed per site) — accepted; production IPN URL must be set by ePay's merchant team via email. — **documented** in the merchant guide.
+5. **Exclusivity policy** — enforced at checkout-begin **and** at issuance (single rule in `Ticket_Issuance_Service`). — **implemented**.
+6. **WooCommerce removed** — the WC bridge, product mapping, and paid-ticket flow were removed; paid tickets are direct-processor only. Google Wallet (which was disabled) was removed too.

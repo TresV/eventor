@@ -5,7 +5,6 @@ namespace EventTicketsElementor\Payments;
 use EventTicketsElementor\CPT_Orders;
 use EventTicketsElementor\Event_Discovery_Meta;
 use EventTicketsElementor\Event_Timeslots;
-use EventTicketsElementor\Plugin;
 use EventTicketsElementor\Settings;
 use EventTicketsElementor\Tickets\Ticket_Rules;
 use EventTicketsElementor\Tickets\Ticket_Timeslot_Exclusivity;
@@ -19,10 +18,9 @@ if (! defined('ABSPATH')) {
 /**
  * Facade for the direct paid-ticket checkout path.
  *
- * Replaces the WooCommerce-only "payments" seam for sites that enable a direct
- * processor (Stripe / ePay.bg). Orchestrates: order creation → seat hold →
- * hosted session → webhook verification → ticket issuance. The WooCommerce
- * bridge remains available as a fallback processor.
+ * Orchestrates: order creation → seat hold → hosted session → webhook
+ * verification → ticket issuance. Paid events route directly to a hosted
+ * processor page (Stripe / ePay.bg).
  *
  * Hooks:
  * - evt_payments_sweep  (cron) → expire stale holds
@@ -32,7 +30,6 @@ class Payment_Service
 {
     public const MODE_NONE         = 'none';
     public const MODE_DIRECT       = 'direct';
-    public const MODE_WOOCOMMERCE  = 'woocommerce';
 
     private Settings $settings;
     private Payment_Order_Service $orders;
@@ -115,9 +112,6 @@ class Payment_Service
         if (in_array($selected, ['stripe', 'epay'], true) && $this->active_processor()) {
             return self::MODE_DIRECT;
         }
-        if ('woocommerce' === $selected || ('' === $selected && $this->wc_is_connected())) {
-            return self::MODE_WOOCOMMERCE;
-        }
         return self::MODE_NONE;
     }
 
@@ -127,14 +121,6 @@ class Payment_Service
     public function is_connected(): bool
     {
         return '' !== $this->active_processor();
-    }
-
-    /**
-     * Whether the WooCommerce fallback bridge is usable.
-     */
-    public function wc_is_connected(): bool
-    {
-        return Plugin::instance()->payments()->is_connected();
     }
 
     public function is_event_paid(int $event_id): bool

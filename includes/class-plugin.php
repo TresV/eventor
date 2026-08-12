@@ -115,9 +115,6 @@ class Plugin
     /** @var Event_Query */
     public $event_query;
 
-    /** @var Google_Wallet_Service */
-    public $google_wallet_service;
-
     /** @var Event_Filters_Source */
     public $event_filters_source;
 
@@ -126,12 +123,6 @@ class Plugin
 
     /** @var Event_Feed_Endpoint */
     public $event_feed_endpoint;
-
-    /** @var WooCommerce_Checkout_Service */
-    public $woocommerce_checkout_service;
-
-    /** @var WooCommerce_Order_Ticketing */
-    public $woocommerce_order_ticketing;
 
     /** @var CPT_Orders */
     public $cpt_orders;
@@ -219,7 +210,7 @@ class Plugin
         $this->ticket_service       = new Ticket_Service($this->settings, $this->event_capacity);
         $this->email_service        = new Email_Service($this->settings);
 
-        // Direct paid-ticket services (Stripe / ePay.bg — no WooCommerce).
+        // Direct paid-ticket services (Stripe / ePay.bg).
         $this->cpt_orders      = new CPT_Orders();
         $this->payment_orders  = new Payments\Payment_Order_Service();
         $this->reservations    = new Payments\Reservation_Service($this->event_capacity, $this->payment_orders);
@@ -233,21 +224,9 @@ class Plugin
         $this->ticket_pdf_endpoint  = new Ticket_Pdf_Endpoint($this->settings, $this->pdf_ticket_service);
         $this->event_csv_export     = new Admin\Event_CSV_Export();
         $this->event_query          = new Event_Query($this->event_capacity, $this->event_status_badge_resolver);
-        $this->google_wallet_service = new Google_Wallet_Service(
-            $this->settings,
-            $this->event_query,
-            $this->ticket_service
-        );
         $this->event_filters_source = new Event_Filters_Source();
         $this->event_ajax           = new Event_Ajax($this->event_query);
         $this->event_feed_endpoint  = new Event_Feed_Endpoint($this->event_query);
-        $this->woocommerce_checkout_service = new WooCommerce_Checkout_Service($this->settings);
-        $this->woocommerce_order_ticketing = new WooCommerce_Order_Ticketing(
-            $this->ticket_service,
-            $this->email_service,
-            $this->event_capacity,
-            $this->ticket_issuance
-        );
 
         // Payment webhook/status REST controllers (payments namespace). Guarded
         // so the plugin still loads if those files are not yet present.
@@ -619,19 +598,9 @@ class Plugin
         return $this->email_service;
     }
 
-    public function google_wallet(): Google_Wallet_Service
-    {
-        return $this->google_wallet_service;
-    }
-
     public function calendar(): Calendar_Service
     {
         return $this->calendar_service;
-    }
-
-    public function payments(): WooCommerce_Checkout_Service
-    {
-        return $this->woocommerce_checkout_service;
     }
 
     public function payment_service(): Payments\Payment_Service

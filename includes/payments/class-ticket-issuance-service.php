@@ -16,14 +16,13 @@ if (! defined('ABSPATH')) {
 }
 
 /**
- * Single source of truth for issuing tickets after payment (direct processors,
- * WooCommerce fallback) or for free checkout.
+ * Single source of truth for issuing tickets after payment (direct processors)
+ * or for free checkout.
  *
- * Extracted from WooCommerce_Order_Ticketing::issue_tickets_for_item() and the
- * inline free path in Ticket_Box_Ajax. Enforces, once: timeslot validity, seat
- * availability (tickets + active holds), per-email limits, timeslot
- * exclusivity, rollback on failure, and email send. All issuance paths must go
- * through here so paid and free flows behave identically.
+ * Enforces, once: timeslot validity, seat availability (tickets + active
+ * holds), per-email limits, timeslot exclusivity, rollback on failure, and
+ * email send. All issuance paths must go through here so paid and free flows
+ * behave identically.
  */
 class Ticket_Issuance_Service
 {
@@ -52,7 +51,7 @@ class Ticket_Issuance_Service
      *   event_id:int (required), timeslot_id:string, quantity:int,
      *   attendee_name:string, attendee_email:string (required),
      *   attendee_phone:string, source:string, source_id:string,
-     *   payment_provider:string (optional: stripe|epay|woocommerce),
+     *   payment_provider:string (optional: stripe|epay),
      *   payment_status:string (optional), order_id:int (optional),
      *   order_item_id:int (optional)
      * }
@@ -117,7 +116,7 @@ class Ticket_Issuance_Service
         }
 
         // Exclusivity — single rule, enforced authoritatively at issuance so
-        // free, paid-webhook, and WooCommerce paths all behave identically.
+        // free, paid-webhook, and direct-processor paths all behave identically.
         if (Ticket_Rules::enforce_timeslot_exclusivity()) {
             $validator = new Ticket_Timeslot_Exclusivity(Ticket_Rules::timeslot_buffer_minutes());
             $timerange = null;

@@ -12,7 +12,7 @@ if (! defined('ABSPATH')) {
 
 /**
  * Core ticket logic (create, generate codes, query, check-in).
- * Source-agnostic: can be used by Elementor, Woo add-on, etc.
+ * Source-agnostic: reusable across issuance paths (Ticket Box, forms, payments).
  */
 class Ticket_Service
 {
@@ -74,8 +74,6 @@ class Ticket_Service
         if ($event_id) {
             delete_transient('evt_capacity_' . $event_id);
         }
-
-        $this->sync_wallet($ticket_id);
 
         return ! is_wp_error($updated);
     }
@@ -545,25 +543,6 @@ class Ticket_Service
 
         if ($user_id) {
             update_post_meta($ticket_id, '_ticket_checked_in_by', absint($user_id));
-        }
-
-        $this->sync_wallet($ticket_id);
-    }
-
-    private function sync_wallet(int $ticket_id): void
-    {
-        if (! class_exists(Plugin::class)) {
-            return;
-        }
-
-        $plugin = Plugin::instance();
-        if (! $plugin || ! method_exists($plugin, 'google_wallet')) {
-            return;
-        }
-
-        $wallet = $plugin->google_wallet();
-        if ($wallet instanceof Google_Wallet_Service) {
-            $wallet->sync_ticket_state($ticket_id);
         }
     }
 

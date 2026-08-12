@@ -28,7 +28,6 @@ The Staff role is not hard-coded to one permission. The plugin manages a catalog
 - Dashboard / Media capabilities
 - Posts / Pages capabilities
 - Users capabilities
-- WooCommerce capabilities
 - Advanced Admin capabilities
 
 The source of truth is stored in the main plugin settings option, but the editing UI lives on the Staff admin page rather than in the general Settings page.

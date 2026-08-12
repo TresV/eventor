@@ -28,7 +28,6 @@ The Staff role is not hard-coded to one permission. The plugin manages a catalog
 - Dashboard / Media capabilities
 - Posts / Pages capabilities
 - Users capabilities
-- WooCommerce capabilities
 - Advanced Admin capabilities
 
 The source of truth is stored in the main plugin settings option, but the editing UI lives on the Staff admin page rather than in the general Settings page.
@@ -87,7 +86,6 @@ This resolved URL is used for admin-bar redirects such as `Visit Site` for Staff
 - права за Табло / Медия
 - права за Публикации / Страници
 - права за Потребители
-- права за WooCommerce
 - разширени администраторски права
 
 Източникът на truth е записан в основния option на плъгина, но редакцията става от Staff екрана, а не от общата Settings страница.

@@ -48,8 +48,8 @@ class Refund_Service
         }
 
         $provider = (string) get_post_meta($ticket_id, '_ticket_payment_provider', true);
-        // WooCommerce orders are refunded through WooCommerce, not here.
-        if (in_array($provider, ['woocommerce', ''], true)) {
+        // Only direct-processor tickets route refunds through here.
+        if ('' === $provider) {
             return;
         }
         if (! isset($this->processors[$provider])) {

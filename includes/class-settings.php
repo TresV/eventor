@@ -10,7 +10,7 @@ use EventTicketsElementor\Admin\Staff_Page;
 use EventTicketsElementor\Admin\Setup_Wizard_Page;
 use EventTicketsElementor\Admin\Settings_Page;
 use EventTicketsElementor\Admin\Repair_Tools_Page;
-use EventTicketsElementor\Admin\WooCommerce_Settings;
+use EventTicketsElementor\Admin\Payment_Processor_Settings;
 
 if (! defined('ABSPATH')) {
     exit;
@@ -32,7 +32,7 @@ class Settings
     private Settings_Page $settings_page;
     private Staff_Page $staff_page;
     private Repair_Tools_Page $tools_page;
-    private WooCommerce_Settings $woocommerce_settings;
+    private Payment_Processor_Settings $payment_processor_settings;
     private Staff_Access_Manager $staff_access_manager;
 
     public function __construct()
@@ -46,7 +46,7 @@ class Settings
         $this->documentation_page = new Documentation_Page();
         $this->staff_page     = new Staff_Page($this->staff_access_manager);
         $this->tools_page     = new Repair_Tools_Page();
-        $this->woocommerce_settings = new WooCommerce_Settings();
+        $this->payment_processor_settings = new Payment_Processor_Settings();
         $this->admin_menu     = new Admin_Menu($this->dashboard_page, $this->setup_wizard_page, $this->get_started_page, $this->documentation_page, $this->settings_page, $this->staff_page, $this->tools_page);
     }
 

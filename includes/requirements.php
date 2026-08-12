@@ -30,7 +30,6 @@ require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-status-badge-meta.ph
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-recurrence.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-selector.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-query.php';
-require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-google-wallet-service.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-filters-source.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-ajax.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-event-feed-endpoint.php';
@@ -106,9 +105,7 @@ require_once EVT_TICKETS_PLUGIN_DIR . 'includes/tickets/class-ticket-cancellatio
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-ticket-cancel-ajax.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/bootstrap/class-ticket-cancellation-bootstrap.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/admin/class-ticket-rules-settings.php';
-require_once EVT_TICKETS_PLUGIN_DIR . 'includes/admin/class-woocommerce-settings.php';
-require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-woocommerce-checkout-service.php';
-require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-woocommerce-order-ticketing.php';
+require_once EVT_TICKETS_PLUGIN_DIR . 'includes/admin/class-payment-processor-settings.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/class-cpt-orders.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/payments/class-order-record.php';
 require_once EVT_TICKETS_PLUGIN_DIR . 'includes/payments/class-payment-event.php';

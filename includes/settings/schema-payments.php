@@ -7,7 +7,7 @@ if (! defined('ABSPATH')) {
 }
 
 /**
- * Payments tab settings sections: WooCommerce checkout and direct payment processors.
+ * Payments tab settings sections: direct payment processors.
  *
  * @param array<string,mixed> $ctx Shared schema context (blogname, admin_email, webhook URLs).
  * @return array<int,array<string,mixed>>
@@ -19,41 +19,9 @@ function schema_payments(array $ctx): array
 
         return [
             [
-                'id'          => 'evt_tickets_payments_woocommerce_section',
-                'title'       => __('WooCommerce Checkout', 'Event-Tickets-for-Elementor'),
-                'description' => __('Configure how paid event requests are sent to WooCommerce cart and checkout.', 'Event-Tickets-for-Elementor'),
-                'tab'         => 'payments',
-                'fields'      => [
-                    [
-                        'key'         => 'woocommerce_product_id',
-                        'label'       => __('WooCommerce Product ID', 'Event-Tickets-for-Elementor'),
-                        'description' => __('Product used as the paid ticket carrier in WooCommerce. Use a simple hidden/virtual product for ticket checkout.', 'Event-Tickets-for-Elementor'),
-                        'type'        => 'number',
-                        'default'     => 0,
-                    ],
-                    [
-                        'key'         => 'woocommerce_checkout_redirect',
-                        'label'       => __('Redirect After Add To Cart', 'Event-Tickets-for-Elementor'),
-                        'description' => __('Choose whether paid ticket requests should go to cart or directly to checkout.', 'Event-Tickets-for-Elementor'),
-                        'type'        => 'select',
-                        'default'     => 'checkout',
-                        'options'     => [
-                            'checkout' => __('Checkout', 'Event-Tickets-for-Elementor'),
-                            'cart'     => __('Cart', 'Event-Tickets-for-Elementor'),
-                        ],
-                    ],
-                    [
-                        'key'   => 'woocommerce_paid_events_note',
-                        'label' => __('Paid Event Flow', 'Event-Tickets-for-Elementor'),
-                        'type'  => 'html',
-                        'html'  => '<p class="description">' . esc_html__('Paid events use the Ticket Box to add a WooCommerce item to cart with attendee, event, and timeslot metadata. Tickets are issued only after the WooCommerce order reaches a paid status.', 'Event-Tickets-for-Elementor') . '</p>',
-                    ],
-                ],
-            ],
-            [
                 'id'          => 'evt_tickets_payments_processors_section',
-                'title'       => __('Payment Processors (Direct Checkout)', 'Event-Tickets-for-Elementor'),
-                'description' => __('Paid ticket requests can go directly to a hosted payment page (Stripe for global cards, ePay.bg for Bulgarian bank cards) without WooCommerce.', 'Event-Tickets-for-Elementor'),
+                'title'       => __('Payment Processors', 'Event-Tickets-for-Elementor'),
+                'description' => __('Paid ticket requests go directly to a hosted payment page (Stripe for global cards, ePay.bg for Bulgarian bank cards).', 'Event-Tickets-for-Elementor'),
                 'tab'         => 'payments',
                 'fields'      => [
                     [
@@ -63,10 +31,9 @@ function schema_payments(array $ctx): array
                         'type'        => 'select',
                         'default'     => '',
                         'options'     => [
-                            ''            => __('Auto — WooCommerce if connected', 'Event-Tickets-for-Elementor'),
-                            'woocommerce' => __('WooCommerce (fallback)', 'Event-Tickets-for-Elementor'),
-                            'stripe'      => __('Stripe — Global cards', 'Event-Tickets-for-Elementor'),
-                            'epay'        => __('ePay.bg — Bulgaria', 'Event-Tickets-for-Elementor'),
+                            ''       => __('Not configured', 'Event-Tickets-for-Elementor'),
+                            'stripe' => __('Stripe — Global cards', 'Event-Tickets-for-Elementor'),
+                            'epay'   => __('ePay.bg — Bulgaria', 'Event-Tickets-for-Elementor'),
                         ],
                     ],
                     [

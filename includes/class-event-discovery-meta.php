@@ -80,16 +80,16 @@ class Event_Discovery_Meta
                     placeholder="<?php esc_attr_e('0.00', 'Event-Tickets-for-Elementor'); ?>" />
             </p>
             <p class="description">
-                <?php esc_html_e('Used for event pricing and WooCommerce checkout amount when paid tickets are enabled.', 'Event-Tickets-for-Elementor'); ?>
+                <?php esc_html_e('Used for event pricing and the direct checkout amount when paid tickets are enabled.', 'Event-Tickets-for-Elementor'); ?>
             </p>
         </div>
         <div class="evt-event-toggle">
             <label>
                 <input type="checkbox" name="evt_event_paid_enabled" value="1" <?php checked($paid_enabled, true); ?> />
-                <strong><?php esc_html_e('Require WooCommerce payment for ticket requests', 'Event-Tickets-for-Elementor'); ?></strong>
+                <strong><?php esc_html_e('Require payment for ticket requests', 'Event-Tickets-for-Elementor'); ?></strong>
             </label>
             <p class="description">
-                <?php esc_html_e('When enabled, the ticket form adds the request to WooCommerce cart/checkout. Tickets are issued only after the order is paid.', 'Event-Tickets-for-Elementor'); ?>
+                <?php esc_html_e('When enabled, the ticket form routes requests through the configured payment processor. Tickets are issued only after the payment is confirmed.', 'Event-Tickets-for-Elementor'); ?>
             </p>
         </div>
         <?php

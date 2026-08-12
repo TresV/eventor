@@ -15,7 +15,7 @@ Documents ticket issuance, ticket status handling, event-day validation, and att
 
 - Ticket Box AJAX
 - Elementor Pro Forms integration
-- WooCommerce paid-ticket flow
+- Direct payment processor flow (Stripe / ePay.bg)
 
 ## Current check-in notes
 
@@ -48,7 +48,7 @@ Documents ticket issuance, ticket status handling, event-day validation, and att
 
 - Ticket Box AJAX
 - Elementor Pro Forms integration
-- WooCommerce поток за платени билети
+- Директен поток с процесор за плащания (Stripe / ePay.bg)
 
 ## Текущи бележки за check-in
 

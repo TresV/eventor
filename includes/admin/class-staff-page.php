@@ -124,7 +124,7 @@ class Staff_Page
                             <div class="evt-card__header">
                                 <h3><?php esc_html_e('Staff Access', 'Event-Tickets-for-Elementor'); ?></h3>
                             </div>
-                            <p class="evt-staff-card__lead"><?php esc_html_e('Choose exactly which plugin, WordPress, and optional WooCommerce capabilities the Staff role should receive.', 'Event-Tickets-for-Elementor'); ?></p>
+                            <p class="evt-staff-card__lead"><?php esc_html_e('Choose exactly which plugin and WordPress capabilities the Staff role should receive.', 'Event-Tickets-for-Elementor'); ?></p>
                             <div class="evt-staff-checkin-url">
                                 <div class="evt-card__header evt-card__header--minor">
                                     <h4><?php esc_html_e('Check-in page URL', 'Event-Tickets-for-Elementor'); ?></h4>

@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: Event Tickets for Elementor
- * Description: Event ticketing for Elementor with QR/PDF/ICS delivery, attendee flows, and WooCommerce-powered paid checkout.
+ * Description: Event ticketing for Elementor with QR/PDF/ICS delivery, attendee flows, and direct payment processor checkout.
  * Version: 0.1.1
  * Author: Viktor Varbanov
  * Text Domain: Event-Tickets-for-Elementor

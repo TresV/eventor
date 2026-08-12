@@ -1,6 +1,6 @@
 # Module: Paid Ticketing — Merchant Guide
 
-This guide is written for site owners who are **not developers**. It explains how to switch on paid tickets, connect a payment processor, and start selling in minutes. It covers the direct checkout path (Stripe + ePay.bg) with a global and Bulgaria focus, and treats WooCommerce as the optional fallback it is.
+This guide is written for site owners who are **not developers**. It explains how to switch on paid tickets, connect a payment processor, and start selling in minutes. It covers the direct checkout path (Stripe + ePay.bg) with a global and Bulgaria focus.
 
 ---
 
@@ -13,7 +13,7 @@ Two processors are available in Phase 1:
 - **Stripe — Global cards** — international cards plus Apple Pay / Google Pay.
 - **ePay.bg — Bulgaria** — Bulgarian bank cards, backed by BORICA.
 
-> myPOS is coming in Phase 2. If the site already uses WooCommerce, the WooCommerce checkout remains available as a fallback (see section 7).
+> myPOS is coming in Phase 2.
 
 ---
 
@@ -78,7 +78,7 @@ Stripe cards are processed in **EUR**, which is the default currency (see sectio
 
 > **Note on ePay.bg** — the plugin implements the official ePay WEB API: the payment request is base64-encoded with an HMAC-SHA1 checksum, and the IPN carries no amount, so the amount is checked against the stored order. Verify a payment in **Demo mode** before going live.
 
-**Refunds (Phase 1):** ePay.bg refunds are initiated from the **ePay merchant panel** — the plugin then detects the refunded status and marks the order and its tickets as refunded. See section 10.
+**Refunds (Phase 1):** ePay.bg refunds are initiated from the **ePay merchant panel** — the plugin then detects the refunded status and marks the order and its tickets as refunded. See section 9.
 
 ---
 
@@ -103,18 +103,7 @@ The default currency is **EUR**. Bulgaria is in the eurozone since January 2026,
 
 ---
 
-## 7. WooCommerce fallback
-
-If the site already runs WooCommerce, nothing is lost — you can keep the existing WooCommerce checkout:
-
-- **Active Processor = "Auto — WooCommerce if connected"** (the default) uses WooCommerce whenever it is connected.
-- **Active Processor = "WooCommerce (fallback)"** forces the WooCommerce path.
-
-The two paths don't conflict: the direct processor settings only take effect when you choose a direct processor, and existing WooCommerce orders keep working as before.
-
----
-
-## 8. Cache / firewall / hosting exclusions (IMPORTANT for webhooks)
+## 7. Cache / firewall / hosting exclusions (IMPORTANT for webhooks)
 
 Payment notifications are plain **POST requests** sent by the processor to:
 
@@ -133,7 +122,7 @@ For example, `.../payments/stripe/webhook` and `.../payments/epay/webhook`. Beca
 
 ---
 
-## 9. Bulgaria compliance note (merchant must verify with an accountant)
+## 8. Bulgaria compliance note (merchant must verify with an accountant)
 
 - **VAT on in-person event admission:** for events held in person, VAT is generally due **where the event takes place** (the special place-of-supply rule). For in-person tickets, OSS is therefore largely irrelevant.
 - **Bulgarian fiscal-device obligations:** Bulgarian merchants must check their obligations under **Наредба Н-18** for online card payments. Using licensed payment service providers such as **ePay.bg** or **myPOS** may qualify for the fiscal-device exemption; the **Stripe** path is less clear-cut.
@@ -142,23 +131,22 @@ This is **not legal advice** — verify your situation with a local accountant b
 
 ---
 
-## 10. Refunds & cancellations (merchant view)
+## 9. Refunds & cancellations (merchant view)
 
 Phase 1 supports **full-order refunds only**. Per-ticket partial refunds arrive in Phase 2.
 
 - **Stripe:** refunds are processed by the plugin automatically — the money is moved and the order and tickets are marked refunded.
 - **ePay.bg:** refunds are initiated from the **ePay merchant panel**; the plugin picks up the refunded status and marks the order and tickets accordingly.
-- **WooCommerce orders:** keep using the normal WooCommerce refund flow, unchanged.
 
 If a buyer requests a refund for one ticket of a multi-ticket order in Phase 1, it is treated as a full-order refund of the whole order.
 
 ---
 
-## 11. Troubleshooting
+## 10. Troubleshooting
 
 | Symptom | Likely cause | Quick fix |
 | --- | --- | --- |
-| Order stuck on **Pending** | Webhook blocked (cache / WAF / bot protection), or the signing secret doesn't match | Check section 8 exclusions; re-check the webhook signing secret in the processor dashboard and in Payments settings |
+| Order stuck on **Pending** | Webhook blocked (cache / WAF / bot protection), or the signing secret doesn't match | Check section 7 exclusions; re-check the webhook signing secret in the processor dashboard and in Payments settings |
 | Paid, but no ticket email | Order may not show Paid yet, or the email landed in spam | Check the order shows **Paid**; check the spam folder; resend the tickets from the Tickets admin |
 | "Sold out" during checkout | Another buyer's seat hold hasn't expired yet | The hold is released automatically (default 30 min) — ask the buyer to try again shortly |
 
@@ -167,7 +155,7 @@ If a buyer requests a refund for one ticket of a multi-ticket order in Phase 1, 
 # Резюме на български
 
 - Платените събития вече ползват **сигурна хостинг страница за плащане** — плъгинът никога не докосва данните на картата (PCI SAQ-A).
-- **Два процесора** в Phase 1: **Stripe** (международни карти, Apple/Google Pay) и **ePay.bg** (български банкови карти, BORICA). **myPOS** идва в Phase 2; WooCommerce остава опционален fallback.
+- **Два процесора** в Phase 1: **Stripe** (международни карти, Apple/Google Pay) и **ePay.bg** (български банкови карти, BORICA). **myPOS** идва в Phase 2.
 - Настройки: **Admin → Event Tickets → Settings → Payments** — поле **Active Processor**, ключове за Stripe (**Stripe Mode**, **Secret Key**, **Webhook Secret** — `whsec_...`) и за ePay.bg (**Merchant ID (MIN)**, **Secret**, **Demo mode**).
 - **Webhook URL-и:** Stripe → `<site>/wp-json/evt/v1/payments/stripe/webhook`; ePay.bg IPN → `<site>/wp-json/evt/v1/payments/epay/webhook`.
 - **Местата се задържат** при започване на плащането (по подразбиране 30 мин); при изтичане поръчката става **Expired**, местата се освобождават, а закъсняло плащане се **възстановява автоматично**.
